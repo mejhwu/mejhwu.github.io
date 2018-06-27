@@ -33,29 +33,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://mejhwu.github.io/2018/06/27/gradient_descent/"/>
-    <id>https://mejhwu.github.io/2018/06/27/gradient_descent/</id>
-    <published>2018-06-27T12:18:12.791Z</published>
-    <updated>2018-06-27T12:18:12.715Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>title: 梯度下降<br>date:  2018/4/24</p><h2 id="categories-机器学习"><a href="#categories-机器学习" class="headerlink" title="categories: 机器学习"></a>categories: 机器学习</h2><p>梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).</p><p>批量梯度下降</p><p>假设有损失函数</p><p>$$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$</p><p>其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n$.</p><p>那么</p><p>$$\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)$$</p><p>$$\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}$$</p><p>所以</p><p>$$\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}$$</p><p>以上公示就是批量梯度下降,每一次迭代$\theta_j$时,都需要完全遍历整个输入集合.</p><p>随机梯度下降</p><p>假设只有一个输入样本,则</p><p>$$\theta_j:=\theta_j + ( y - h_\theta(x)x_j$$</p><p>以上就是随机梯度下降的公式.即每次更新$\theta_j$只用一个样本.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;p&gt;title: 梯度下降&lt;br&gt;date:  2018/4/24&lt;/p&gt;
-&lt;h2 id=&quot;categories-机器学习&quot;&gt;&lt;a href=&quot;#categories-机器学习&quot; class=&quot;headerlink&quot; title=&quot;categories: 机器学习&quot;&gt;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>决策树</title>
     <link href="https://mejhwu.github.io/2018/06/27/decision_tree/"/>
     <id>https://mejhwu.github.io/2018/06/27/decision_tree/</id>
@@ -69,6 +46,32 @@
       
       
         &lt;h1 id=&quot;决策树&quot;&gt;&lt;a href=&quot;#决策树&quot; class=&quot;headerlink&quot; title=&quot;决策树&quot;&gt;&lt;/a&gt;决策树&lt;/h1&gt;&lt;h2 id=&quot;1-基本概念&quot;&gt;&lt;a href=&quot;#1-基本概念&quot; class=&quot;headerlink&quot; title=&quot;1. 基本概念&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://mejhwu.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梯度下降</title>
+    <link href="https://mejhwu.github.io/2018/04/24/gradient_descent/"/>
+    <id>https://mejhwu.github.io/2018/04/24/gradient_descent/</id>
+    <published>2018-04-23T16:00:00.000Z</published>
+    <updated>2018-06-27T12:44:56.113Z</updated>
+    
+    <content type="html"><![CDATA[<p>梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).</p><p>批量梯度下降</p><p>假设有损失函数</p><p>$$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$</p><p>其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n$.</p><p>那么</p><p>$$\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)$$</p><p>$$\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}$$</p><p>所以</p><p>$$\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}$$</p><p>以上公示就是批量梯度下降,每一次迭代$\theta_j$时,都需要完全遍历整个输入集合.</p><p>随机梯度下降</p><p>假设只有一个输入样本,则</p><p>$$\theta_j:=\theta_j + ( y - h_\theta(x)x_j$$</p><p>以上就是随机梯度下降的公式.即每次更新$\theta_j$只用一个样本.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).&lt;/p&gt;
+&lt;p&gt;批量梯度下降&lt;/p&gt;
+&lt;p&gt;假设有损失函数&lt;/p&gt;
+&lt;p&gt;$$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)
       
     
     </summary>

@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -237,9 +237,6 @@
   
 
   
-    
-
-  
 
   
 </nav>
@@ -259,6 +256,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -366,158 +366,6 @@
         
           
             
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/gradient_descent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jhwu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/27/gradient_descent/" itemprop="url">
-                  Untitled
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-06-27 20:18:12" itemprop="dateCreated datePublished" datetime="2018-06-27T20:18:12+08:00">2018-06-27</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>title: 梯度下降<br>date:  2018/4/24</p>
-<h2 id="categories-机器学习"><a href="#categories-机器学习" class="headerlink" title="categories: 机器学习"></a>categories: 机器学习</h2><p>梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).</p>
-<p>批量梯度下降</p>
-<p>假设有损失函数</p>
-<p>$$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$</p>
-<p>其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n$.</p>
-<p>那么</p>
-<p>$$\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)$$</p>
-<p>$$\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}$$</p>
-<p>所以</p>
-<p>$$\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}$$</p>
-<p>以上公示就是批量梯度下降,每一次迭代$\theta_j$时,都需要完全遍历整个输入集合.</p>
-<p>随机梯度下降</p>
-<p>假设只有一个输入样本,则</p>
-<p>$$\theta_j:=\theta_j + ( y - h_\theta(x)x_j$$</p>
-<p>以上就是随机梯度下降的公式.即每次更新$\theta_j$只用一个样本.</p>
-
           
         
       
@@ -743,6 +591,190 @@
 <p>其中</p>
 <p>$$Ent(\tilde{D}) = - \sum_{k=1}^{|\mathcal{Y}|}\tilde{p}_k log_2 \tilde{p}_k$$</p>
 <p>对问题(2), 若样本$\boldsymbol{x}$在划分属性$a$上的取值已知, 则将$\boldsymbol{x}$划入与其取值对应的子节点, 且样本权值在子节点中保持$w_{\boldsymbol{x}}$. 若样本$\boldsymbol{x}$在划分属性$a$上的取值未知, 则将$\boldsymbol{x}$同时划入所有子节点, 且样本权值在与属性$a^v$对应的子节点中调整为$\tilde{r}<em>v \cdot w</em>{\boldsymbol{x}}$; 直观地看, 就是让同一样本以不同的概率划入到不同的子节点中去.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/04/24/gradient_descent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jhwu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/24/gradient_descent/" itemprop="url">
+                  梯度下降
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-24T00:00:00+08:00">2018-04-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-27 20:44:56" itemprop="dateModified" datetime="2018-06-27T20:44:56+08:00">2018-06-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).</p>
+<p>批量梯度下降</p>
+<p>假设有损失函数</p>
+<p>$$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$</p>
+<p>其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n$.</p>
+<p>那么</p>
+<p>$$\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)$$</p>
+<p>$$\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}$$</p>
+<p>所以</p>
+<p>$$\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}$$</p>
+<p>以上公示就是批量梯度下降,每一次迭代$\theta_j$时,都需要完全遍历整个输入集合.</p>
+<p>随机梯度下降</p>
+<p>假设只有一个输入样本,则</p>
+<p>$$\theta_j:=\theta_j + ( y - h_\theta(x)x_j$$</p>
+<p>以上就是随机梯度下降的公式.即每次更新$\theta_j$只用一个样本.</p>
 
           
         
@@ -1960,7 +1992,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
 
 
 
@@ -2049,6 +2081,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
 
   
 

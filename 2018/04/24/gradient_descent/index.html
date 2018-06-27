@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 $$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$ 其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \thet">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T12:44:56.113Z">
+<meta property="og:updated_time" content="2018-06-27T12:57:51.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度下降">
 <meta name="twitter:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 $$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$ 其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \thet">
@@ -224,6 +224,14 @@
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-categories"></i> <br />Categories</a>
   </li>
         
         
@@ -341,7 +349,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-06-27 20:44:56" itemprop="dateModified" datetime="2018-06-27T20:44:56+08:00">2018-06-27</time>
+                <time title="Modified: 2018-06-27 20:57:51" itemprop="dateModified" datetime="2018-06-27T20:57:51+08:00">2018-06-27</time>
               
             
           </span>
@@ -762,6 +770,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

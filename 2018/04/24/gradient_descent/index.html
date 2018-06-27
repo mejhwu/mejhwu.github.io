@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 $$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$ 其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \thet">
+  <meta name="description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="梯度下降">
 <meta property="og:url" content="https://mejhwu.github.io/2018/04/24/gradient_descent/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 $$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$ 其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \thet">
+<meta property="og:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-06-27T12:57:51.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度下降">
-<meta name="twitter:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 $$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$ 其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \thet">
+<meta name="twitter:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_">
 
 
 
@@ -403,18 +403,13 @@
         <p>梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).</p>
 <p>批量梯度下降</p>
 <p>假设有损失函数</p>
-<p>$$J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$</p>
-<p>其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n$.</p>
+<script type="math/tex; mode=display">J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2</script><p>其中$h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n$.</p>
 <p>那么</p>
-<p>$$\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)$$</p>
-<p>$$\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}$$</p>
-<p>所以</p>
-<p>$$\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}$$</p>
-<p>以上公示就是批量梯度下降,每一次迭代$\theta_j$时,都需要完全遍历整个输入集合.</p>
+<script type="math/tex; mode=display">\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)</script><script type="math/tex; mode=display">\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}</script><p>所以</p>
+<script type="math/tex; mode=display">\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}</script><p>以上公示就是批量梯度下降,每一次迭代$\theta_j$时,都需要完全遍历整个输入集合.</p>
 <p>随机梯度下降</p>
 <p>假设只有一个输入样本,则</p>
-<p>$$\theta_j:=\theta_j + ( y - h_\theta(x)x_j$$</p>
-<p>以上就是随机梯度下降的公式.即每次更新$\theta_j$只用一个样本.</p>
+<script type="math/tex; mode=display">\theta_j:=\theta_j + ( y - h_\theta(x)x_j</script><p>以上就是随机梯度下降的公式.即每次更新$\theta_j$只用一个样本.</p>
 
       
     </div>

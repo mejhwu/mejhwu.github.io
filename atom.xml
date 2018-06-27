@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mejhwu.github.io/"/>
-  <updated>2018-06-27T12:18:12.715Z</updated>
+  <updated>2018-06-27T12:42:15.911Z</updated>
   <id>https://mejhwu.github.io/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>神经网络</title>
+    <link href="https://mejhwu.github.io/2018/06/27/neural-network/"/>
+    <id>https://mejhwu.github.io/2018/06/27/neural-network/</id>
+    <published>2018-06-27T12:41:46.000Z</published>
+    <updated>2018-06-27T12:42:15.911Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://mejhwu.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title></title>

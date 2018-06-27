@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="总体与样本总体    个体    样本一般将研究对象的全体组成的集合成为总体,组成总体的每一个成员成为个体. 从总体中挑选一部分个体的过程叫样本, 样本所含的个体数称为样本容量. 抽样方法抽样要保证对每一个个体”机会均等”,即总体中每一个体有同样机会被抽到,谁也不占优.凡是满足这个要求的抽样叫做随机抽样. 常用随机抽样方案: (1)”集团抽样”.即先把总体中的全部个体,按某种考虑分成一些大集团,每">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数理统计的基本概念">
+<meta property="og:url" content="https://mejhwu.github.io/2018/04/22/conception_of_mathematical_statistics/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="总体与样本总体    个体    样本一般将研究对象的全体组成的集合成为总体,组成总体的每一个成员成为个体. 从总体中挑选一部分个体的过程叫样本, 样本所含的个体数称为样本容量. 抽样方法抽样要保证对每一个个体”机会均等”,即总体中每一个体有同样机会被抽到,谁也不占优.凡是满足这个要求的抽样叫做随机抽样. 常用随机抽样方案: (1)”集团抽样”.即先把总体中的全部个体,按某种考虑分成一些大集团,每">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-27T12:17:51.155Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数理统计的基本概念">
+<meta name="twitter:description" content="总体与样本总体    个体    样本一般将研究对象的全体组成的集合成为总体,组成总体的每一个成员成为个体. 从总体中挑选一部分个体的过程叫样本, 样本所含的个体数称为样本容量. 抽样方法抽样要保证对每一个个体”机会均等”,即总体中每一个体有同样机会被抽到,谁也不占优.凡是满足这个要求的抽样叫做随机抽样. 常用随机抽样方案: (1)”集团抽样”.即先把总体中的全部个体,按某种考虑分成一些大集团,每">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mejhwu.github.io/2018/04/22/conception_of_mathematical_statistics/"/>
+
+
+
+
+
+  <title>数理统计的基本概念 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/04/22/conception_of_mathematical_statistics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jhwu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数理统计的基本概念</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T00:00:00+08:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="总体与样本"><a href="#总体与样本" class="headerlink" title="总体与样本"></a>总体与样本</h1><h2 id="总体-个体-样本"><a href="#总体-个体-样本" class="headerlink" title="总体    个体    样本"></a>总体    个体    样本</h2><p>一般将研究对象的全体组成的集合成为<strong>总体</strong>,组成总体的每一个成员成为<strong>个体</strong>.</p>
+<p>从总体中挑选一部分个体的过程叫<strong>样本</strong>, 样本所含的个体数称为<strong>样本容量</strong>.</p>
+<h2 id="抽样方法"><a href="#抽样方法" class="headerlink" title="抽样方法"></a>抽样方法</h2><p>抽样要保证对每一个个体”机会均等”,即总体中每一个体有同样机会被抽到,谁也不占优.凡是满足这个要求的抽样叫做<strong>随机抽样</strong>.</p>
+<p>常用随机抽样方案:</p>
+<p>(1)”集团抽样”.即先把总体中的全部个体,按某种考虑分成一些大集团,每个大集团内又可分为若干小集团,后者还可以再细分.抽样时,先用随机的方法抽取若干个大集团,再在抽出的每个大集团内分别抽出若干个小集团,$\cdots \cdots$这样下去,最后在最低一级的集团中随机抽出若干个体.这样抽出的全部个体构成所需的样本.</p>
+<p>(2)”分层按比例抽样”.必须有两个条件:一是分层的标准应合理.这主要是指层与层之间确实有较大差异,而每层内各个个体的差异较小.二是每层所含个体数在总体全部个体数所占的比例要能够比较确切地知道.</p>
+<h1 id="样本分布和统计量"><a href="#样本分布和统计量" class="headerlink" title="样本分布和统计量"></a>样本分布和统计量</h1><h2 id="样本分布"><a href="#样本分布" class="headerlink" title="样本分布"></a>样本分布</h2><p>样本是按照一定的方法从总体中抽出的一部分个体所组成的集合.样本总所含的个体数称为<strong>样本容量</strong>或<strong>样本大小</strong>.</p>
+<p>将$n$个抽象的随机变量$X_1,X_2,\cdots,X_n$称为样本,而把具体的观测数字$(x_1,x_2,\cdots,x_n)$看成该样本的一组取值.</p>
+<p>样本$(X_1,X_2,\cdots,X_n)$既然是随机变量,也就有其概率分布.样本的概率分布称为<strong>样本分布</strong>.</p>
+<p>作为随机变量的$X_1,X_2,\cdots,X_n$可以认为是相互独立且有相同的分布,每一个$X_i$的分布都与总体$X$有相同的分布.</p>
+<p>“随机抽样”的要求保证了样本分量$X_1$与总体$X$同分布的性质,”每次抽取时,总体成分保持不变”的要求保证了样本的各分量$X_1,\cdots,X_n$相互独立且都与总体$X$有相同分布的性质.</p>
+<p>统计学中将”每次抽取时,总体的成分保持不变的随机抽样”称为<strong>简单随机抽样</strong>.</p>
+<p>由简单随机抽样得到的样本称为<strong>随机样本</strong>.</p>
+<h2 id="统计量"><a href="#统计量" class="headerlink" title="统计量"></a>统计量</h2><p>对样本进行必要的加工和运算处理后得到的结果称为<strong>统计量</strong>.</p>
+<p>常用统计量:</p>
+<ol>
+<li>样本均值</li>
+</ol>
+<p>$$\bar{X}=\frac{1}{n}\sum_{i=1}{n}X_k$$</p>
+<ol start="2">
+<li>样本方差</li>
+</ol>
+<p>$$S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2$$</p>
+<ol start="3">
+<li>样本标准差</li>
+</ol>
+<p>$$S=\sqrt{S}=\sqrt{\frac{1}{n-1}\sum_{i=1}{n}(X_i-\bar{X})^2}$$</p>
+<ol start="4">
+<li>样本$k$阶原点矩</li>
+</ol>
+<p>$$A_k=\frac{1}{n}\sum_{i=1}^nX_i^k$$</p>
+<ol start="5">
+<li>样本$k$阶中心矩</li>
+</ol>
+<p>$$B_k=\frac{1}{n}\sum_{i=1}{n}(X_i-\bar{X})^k$$</p>
+<ol start="6">
+<li>从总体$X$中抽取一容量为$n$的样本$X_1,X_2,\cdots,X_n$,设相应的观测值为$x_1,\cdots,x_n$,将观测值按由小到大的次序重新排列为</li>
+</ol>
+<p>$$x_{(1)} \le x_{(2)} \le \cdots \le x_{(n)}$$</p>
+<p>则称$x_{(1)},\cdots,x_{(n)}$为原始样本观测值$x_1,\cdots,x_n$的<strong>次序样本观测值</strong>.$x_{(1)},\cdots,x_{(n)}$由$x_1,\cdots,x_n$确定,$x_1,\cdots,x_n$的值有一定随机性,导致$x_{(1)},\cdots,x_{(n)}$的值也有一定随机性.为此,将次序样本观测值$x_{(1)},\cdots,x_{(n)}$看成(想象成)某$n$个随机变量$X_{(1)},\cdots,X_{(n)}$(其分布可能与$X_1,\cdots,X_n)$截然不同)的观测值,如此定义的$n$为随机变量$(X_{(1)},\cdots,X_{(n)})$被称为原始样本$X_1,\cdots,X_n)$的<strong>次序统计量</strong>.</p>
+<ol start="7">
+<li>样本中位数</li>
+</ol>
+<p>$$\tilde{X}=\begin{cases} X_(k+1) &amp; \text{if} \quad n=2k+1 \ \frac{1}{2}(X_{(k)} + X_{(k+1)}) &amp; \text{if} \quad n=2k \end{cases}$$</p>
+<ol start="8">
+<li>样本极差</li>
+</ol>
+<p>$$R=X_{(n)}-X_{(1)}$$</p>
+<p>统计量的实质在于:统计量只依赖与样本$X_1,\cdots,X_n$,而不涉及任何其他未知的量,即它是样本的已知函数$g(X_1,\cdots,X_n)$,且不能含有任何未知参数.</p>
+<h2 id="统计量的分布"><a href="#统计量的分布" class="headerlink" title="统计量的分布"></a>统计量的分布</h2><ol>
+<li>$\chi^2$分布</li>
+</ol>
+<p>设$X_1,\cdots,X_n$相互独立且都服从$N(0,1)$分布,它们的平方和</p>
+<p>$$\chi^2 \stackrel{def} = sX_1^2+ \cdots + X_n^2$$</p>
+<p>的分布称为自由度为$n$的$\chi^2$分布,记为$\chi^2 \sim \chi(n)$.</p>
+<p>其概率密度</p>
+<p>$$f(y)=\begin{cases} \frac{1}{2^{\frac{n}{2}}\Gamma(\frac{n}{2})}y^{\frac{n}{2}-1} e^{-\frac{y}{2}}, &amp; y \ge 0 \ 0, &amp; y &lt; 0 \end{cases}$$</p>
+<p>其中$\Gamma(z)=\int_0^{\infty}u^{z-1}e^{-u}du,(z\ge 0)$.</p>
+<p>对任意给定的正数$\alpha(0&lt;\alpha&lt;0)$,称满足条件</p>
+<p>$$\int_{\chi_\alpha^2(n)}^{\infty}f(y)dy=\alpha$$</p>
+<p>的点$\chi_\alpha^2(n)$为$\chi^2(n)$的上$\alpha$分位点.</p>
+<p>$\chi_\alpha^2(n)$的概率意义是:服从$\chi_\alpha^2(n)$分布的随机变量$\chi^2$,取值大于$\chi_\alpha^2(n)$的概率正好等于$\alpha$即</p>
+<p>$$P{\chi^2 &gt; \chi_\alpha^2(n)}=\alpha$$</p>
+<p>若$\chi_1^2 \sim \chi^2(n_1), \chi_2^2 \sim \chi^2(n_2)$,且$\chi_1^2$与$\chi_2^2$独立,则</p>
+<p>$$\chi_1^2+\chi_2^2=\chi^2(n_1+n_2)$$</p>
+<ol start="2">
+<li>$t$分布</li>
+</ol>
+<p>设$X\sim N(0,1), Y\sim \chi^2(n)$,且$X,Y$相互独立,则随机变量</p>
+<p>$$t\stackrel{def} =  \frac{X}{\sqrt{Y/n}}$$</p>
+<p>的分布称为自由度$n$的$t$分布,记为$t \sim t(n)$.</p>
+<p>$t(n)$分布的概率密度为</p>
+<p>$$f(x)=\frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(\frac{n}{2})}(1+\frac{t^2}{n})^{-\frac{n+1}{2}}, \qquad -\infty &lt; t &lt; +\infty$$</p>
+<p>其中$\Gamma(z)=\int_0^{\infty}u^{z-1}e^{-u}du,(z\ge 0)$.</p>
+<ol start="3">
+<li>$F$分布</li>
+</ol>
+<p>设$U\sim \chi^2(n_1), V\sim \chi^2(n_2)$,且$U,V$相互独立,则随机变量</p>
+<p>$$F \stackrel{def} =  \frac{U/n_1}{V/n_2}$$</p>
+<p>的分布称为自由度$(n_1,n_2)$的$F$分布,记为$F\sim F(n_1,n_2)$. 其中$n_1,n_2$分别称为第一,第二自由度.</p>
+<p>$F(n_1,n_2)$分布的概率密度为</p>
+<p>$$f(y)=\begin{cases} \frac{\Gamma(\frac{n_1+n_2}{2})}{\Gamma(\frac{n_1)}{2}\Gamma(\frac{n_2)}{2}} (\frac{n_1}{n_2})(\frac{n_1}{n_2}y)^{\frac{n_1}{2}-1}(1+\frac{n_1}{n_2}y)^{-\frac{n_1+n_2}{2}}, &amp; y \ge 0 \ 0 &amp; y &lt; 0 \end{cases}$$</p>
+<p>$F(n_1,n_2)$分布的上$\alpha$分为点定义为满足条件</p>
+<p>$$\int_{F_\alpha(n_1,n_2)}^{\infty}f(y)dy=\alpha$$</p>
+<p>的点$F_\alpha(n_1,n_2)$. 并且</p>
+<p>$$F_{1-\alpha}(n_2,n_2)=\frac{1}{F_\alpha(n_1,n_2)}$$</p>
+<h2 id="与正态总体统计量有关的分布"><a href="#与正态总体统计量有关的分布" class="headerlink" title="与正态总体统计量有关的分布"></a>与正态总体统计量有关的分布</h2><ol>
+<li>若$X$服从一元正态分布$N(\mu, \sigma^2)$,则$X$的线性函数</li>
+</ol>
+<p>$$aX+b \sim N(a\mu+b, a^2 \sigma^2)$$</p>
+<p>特别</p>
+<p>$$\frac{X-\mu}{\sigma} \sim N(0,1)$$</p>
+<ol start="2">
+<li>若$X \sim N(\mu_1, \sigma_1^2), Y \sim N(\mu_2, \sigma_2^2)$,且$X$与$Y$相互独立,则</li>
+</ol>
+<p>$$X \pm Y \sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)$$</p>
+<ol start="3">
+<li>如果随机变量$\mathbf{X}$服从均值向量为$\mathbf{\mu}$,协方差矩阵为$\mathbf{\Sigma}$的$n$元正态分布$N(\mathbf{\mu, \Sigma}),\mathbf{A}$是$m$行$n$列的常数矩阵,则$m$维随机向量</li>
+</ol>
+<p>$$\mathbf{AX} \sim N(\mathbf{A\mu,A\Sigma A’})$$</p>
+<ol start="4">
+<li>显然$\frac{X_1-\mu}{\sigma},\frac{X_2-\mu}{\sigma},\cdots,\frac{X_n-\mu}{\sigma}$独立同$N(0,1)$分布,由$\chi^2$分布的定义可知它们的平方和</li>
+</ol>
+<p>$$\frac{1}{\sigma^2} \sum_{i=1}^{n}(X_1-\mu)^2 \sim \chi^2(n)$$</p>
+<ol start="5">
+<li>由独立正态变量的线性运算性质得</li>
+</ol>
+<p>$$\sum_{i=1}^nX_i \sim N(n\mu, n\sigma^2)$$</p>
+<p>所以</p>
+<p>$$\bar{X}=\frac{\displaystyle \sum_{i=1}^nX_i}{n} \sim N(\mu, \frac{\sigma^2}{n})$$</p>
+<p>标准化得</p>
+<p>$$\frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$</p>
+<ol start="6">
+<li><p>$$\frac{1}{\sigma^2}\sum_{i=1}{n}(X_i-\bar{X})^2 \sim \chi^2(n-1)$$</p>
+</li>
+</ol>
+<p>亦即</p>
+<p>$$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$$</p>
+<ol start="7">
+<li><p>$\frac{\sqrt{n}{\bar{X}-\mu}}{\sigma}$与$\frac{n-1)S^2}{\sigma^2}$相互独立.</p>
+</li>
+<li></li>
+</ol>
+<p>$$\frac{\sqrt{n}(\bar{x}-\mu)}{S} = \frac{\frac{\sqrt{n}(\bar{x}-\mu)}{\sigma}}{\sqrt{\frac{(n-1)S^2}{(n-1)\sigma^2}}} \sim t(n-1)$$</p>
+<p>9.</p>
+<p>$$\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0,1)$$</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/19/summary_of_probability_theory/" rel="next" title="概率论总结">
+                <i class="fa fa-chevron-left"></i> 概率论总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/27/decision_tree/" rel="prev" title="决策树">
+                决策树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">jhwu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总体与样本"><span class="nav-number">1.</span> <span class="nav-text">总体与样本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总体-个体-样本"><span class="nav-number">1.1.</span> <span class="nav-text">总体    个体    样本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽样方法"><span class="nav-number">1.2.</span> <span class="nav-text">抽样方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样本分布和统计量"><span class="nav-number">2.</span> <span class="nav-text">样本分布和统计量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#样本分布"><span class="nav-number">2.1.</span> <span class="nav-text">样本分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计量"><span class="nav-number">2.2.</span> <span class="nav-text">统计量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计量的分布"><span class="nav-number">2.3.</span> <span class="nav-text">统计量的分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与正态总体统计量有关的分布"><span class="nav-number">2.4.</span> <span class="nav-text">与正态总体统计量有关的分布</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jhwu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

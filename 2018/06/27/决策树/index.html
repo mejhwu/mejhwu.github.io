@@ -111,11 +111,11 @@
   <meta name="description" content="决策树 1. 基本概念 决策树是一种常见的机器学习方法,一般一棵决策树为一颗多叉树. 每一个叶子节点就对应于一个决策结果.决策树的生成过程类似于数据结构中的树的生成过程.  输入: 训练集\(D=\{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}\) 属性集\(A=\{a_1,a_2,...,a_d\}\) 123456789101112131415161718西瓜书基本算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="决策树">
-<meta property="og:url" content="https://mejhwu.github.io/2018/06/27/decision_tree/index.html">
+<meta property="og:url" content="https://mejhwu.github.io/2018/06/27/决策树/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="决策树 1. 基本概念 决策树是一种常见的机器学习方法,一般一棵决策树为一颗多叉树. 每一个叶子节点就对应于一个决策结果.决策树的生成过程类似于数据结构中的树的生成过程.  输入: 训练集\(D=\{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}\) 属性集\(A=\{a_1,a_2,...,a_d\}\) 123456789101112131415161718西瓜书基本算">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T14:18:24.904Z">
+<meta property="og:updated_time" content="2018-09-05T14:19:36.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树">
 <meta name="twitter:description" content="决策树 1. 基本概念 决策树是一种常见的机器学习方法,一般一棵决策树为一颗多叉树. 每一个叶子节点就对应于一个决策结果.决策树的生成过程类似于数据结构中的树的生成过程.  输入: 训练集\(D=\{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}\) 属性集\(A=\{a_1,a_2,...,a_d\}\) 123456789101112131415161718西瓜书基本算">
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/06/27/decision_tree/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2018/06/27/决策树/"/>
 
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/decision_tree/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/决策树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -332,12 +332,24 @@
                 
               
 
-              <time title="Created: 2018-06-27 00:00:00 / Modified: 22:18:24" itemprop="dateCreated datePublished" datetime="2018-06-27T00:00:00+08:00">2018-06-27</time>
+              <time title="Created: 2018-06-27 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-27T00:00:00+08:00">2018-06-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-05 22:19:36" itemprop="dateModified" datetime="2018-09-05T22:19:36+08:00">2018-09-05</time>
               
             
           </span>
@@ -404,7 +416,7 @@
 <h2 id="划分选择">2. 划分选择</h2>
 <p>在以上的算法流程中,最重要的步骤就是在属性集A中选择最优的划分属性a, 一般在划分的过程中,希望划分出来的样本子集尽量属于同一类别, 即节点的&quot;纯度&quot;越来越高.</p>
 <h3 id="信息增益">2.1 信息增益</h3>
-<p><a href="https://zh.wikipedia.org/wiki/%E7%86%B5_(%E4%BF%A1%E6%81%AF%E8%AE%BA)" target="_blank" rel="noopener">&quot;信息熵&quot;</a>是度量样本集合纯度最常用的一种指标. 假定当前样本集合D中第<span class="math inline">\(k\)</span>类样本的比例为<span class="math inline">\(p_k(k=1,2,...,|\mathcal{Y}|)\)</span>, 则<span class="math inline">\(D\)</span>的信息熵定义为</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E7%86%B5_%E4%BF%A1%E6%81%AF%E8%AE%BA" target="_blank" rel="noopener">&quot;信息熵&quot;</a>是度量样本集合纯度最常用的一种指标. 假定当前样本集合D中第<span class="math inline">\(k\)</span>类样本的比例为<span class="math inline">\(p_k(k=1,2,...,|\mathcal{Y}|)\)</span>, 则<span class="math inline">\(D\)</span>的信息熵定义为</p>
 <p><span class="math display">\[Ent(D)= \sum ^{|\mathcal{Y}|}_{k=1}p_klog_2p_k\]</span></p>
 <p><span class="math inline">\(Ent(D)\)</span>的值越小,则<span class="math inline">\(D\)</span>的纯度越高.</p>
 <p>计算信息熵时约定:若<span class="math inline">\(p=0\)</span>, 则<span class="math inline">\(plog_2p=0\)</span>. <span class="math inline">\(Ent(D)\)</span>的最小值为0,最大值为<span class="math inline">\(log_2|\mathcal{Y}|\)</span></p>
@@ -495,7 +507,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/24/gradient_descent/" rel="next" title="梯度下降">
+              <a href="/2018/04/24/梯度下降/" rel="next" title="梯度下降">
                 <i class="fa fa-chevron-left"></i> 梯度下降
               </a>
             
@@ -505,7 +517,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/27/neural-network/" rel="prev" title="神经网络">
+              <a href="/2018/06/27/神经网络/" rel="prev" title="神经网络">
                 神经网络 <i class="fa fa-chevron-right"></i>
               </a>
             

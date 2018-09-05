@@ -108,21 +108,22 @@
 
 
 
-  <meta name="description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。     1. 查找 从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。     2. 插入 插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络">
-<meta property="og:url" content="https://mejhwu.github.io/2018/06/27/neural-network/index.html">
+<meta property="og:title" content="二叉搜索树">
+<meta property="og:url" content="https://mejhwu.github.io/2017/10/22/二叉搜索树/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+<meta property="og:description" content="二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。     1. 查找 从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。     2. 插入 插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T03:56:14.926Z">
+<meta property="og:image" content="https://mejhwu.github.io/2017/10/22/images/binary_search_tree/binary_search_tree.png">
+<meta property="og:image" content="https://mejhwu.github.io/2017/10/22/images/binary_search_tree/binary_search_tree_search.png">
+<meta property="og:image" content="https://mejhwu.github.io/2017/10/22/images/binary_search_tree/binary_search_tree_insert.png">
+<meta property="og:updated_time" content="2018-09-05T14:20:08.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神经网络">
-<meta name="twitter:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+<meta name="twitter:title" content="二叉搜索树">
+<meta name="twitter:description" content="二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。     1. 查找 从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。     2. 插入 插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。">
+<meta name="twitter:image" content="https://mejhwu.github.io/2017/10/22/images/binary_search_tree/binary_search_tree.png">
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml" />
@@ -130,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/06/27/neural-network/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2017/10/22/二叉搜索树/"/>
 
 
 
@@ -140,7 +141,7 @@
   };
 </script>
 
-  <title>神经网络 | 个人博客</title>
+  <title>二叉搜索树 | 个人博客</title>
   
 
 
@@ -293,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/neural-network/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2017/10/22/二叉搜索树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -310,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">神经网络
+          <h1 class="post-title" itemprop="name headline">二叉搜索树
               
             
           </h1>
@@ -335,7 +336,7 @@
                 
               
 
-              <time title="Created: 2018-06-27 20:41:46" itemprop="dateCreated datePublished" datetime="2018-06-27T20:41:46+08:00">2018-06-27</time>
+              <time title="Created: 2017-10-22 00:00:00" itemprop="dateCreated datePublished" datetime="2017-10-22T00:00:00+08:00">2017-10-22</time>
             
 
             
@@ -352,11 +353,29 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-06-28 11:56:14" itemprop="dateModified" datetime="2018-06-28T11:56:14+08:00">2018-06-28</time>
+                <time title="Modified: 2018-09-05 22:20:08" itemprop="dateModified" datetime="2018-09-05T22:20:08+08:00">2018-09-05</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -385,13 +404,23 @@
       
 
       
-        <h1 id="神经网络">神经网络</h1>
-<h2 id="神经元模型">神经元模型</h2>
-<p>神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。</p>
-<p>神经元模型中，神经元接受<span class="math inline">\(n\)</span>个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。</p>
-<p>常用的激活函数为<span class="math inline">\(sigmoid(x)\)</span>函数。</p>
-<p><span class="math display">\[sigmoid(x)=\frac{1}{1+e^{-x}}\]</span></p>
-<h2 id="感知机与多层网络">感知机与多层网络</h2>
+        <p>二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。</p>
+<div class="figure">
+<img src="../images/binary_search_tree/binary_search_tree.png">
+
+</div>
+<h3 id="查找">1. 查找</h3>
+<p>从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。</p>
+<div class="figure">
+<img src="../images/binary_search_tree/binary_search_tree_search.png">
+
+</div>
+<h3 id="插入">2. 插入</h3>
+<p>插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。</p>
+<div class="figure">
+<img src="../images/binary_search_tree/binary_search_tree_insert.png">
+
+</div>
 
       
     </div>
@@ -410,12 +439,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-        </div>
-      
 
       
       
@@ -425,18 +448,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/decision_tree/" rel="next" title="决策树">
-                <i class="fa fa-chevron-left"></i> 决策树
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/05/new_feature_in_java8/" rel="prev" title="Java 8 新特性">
-                Java 8 新特性 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/19/概率论总结/" rel="prev" title="概率论总结">
+                概率论总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经元模型"><span class="nav-number">1.1.</span> <span class="nav-text">神经元模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机与多层网络"><span class="nav-number">1.2.</span> <span class="nav-text">感知机与多层网络</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">1.</span> <span class="nav-text">1. 查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">2.</span> <span class="nav-text">2. 插入</span></a></li></ol></div>
             
 
           </div>

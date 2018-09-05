@@ -111,11 +111,11 @@
   <meta name="description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 8 新特性">
-<meta property="og:url" content="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/index.html">
+<meta property="og:url" content="https://mejhwu.github.io/2018/09/05/java8新特性/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T13:30:23.918Z">
+<meta property="og:updated_time" content="2018-09-05T14:18:45.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 8 新特性">
 <meta name="twitter:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2018/09/05/java8新特性/"/>
 
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/05/java8新特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2018-09-05 00:00:00 / Modified: 21:30:23" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
+              <time title="Created: 2018-09-05 00:00:00 / Modified: 22:18:45" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
             
 
             
@@ -565,6 +565,46 @@
 </tr>
 </tbody>
 </table>
+<h3 id="筛选和切片">筛选和切片</h3>
+<p><code>Stream</code>接口支持<code>filter</code>，该操作会接受一个谓词（一个返回<code>boolean</code>的函数）作为参数，并返回一个包括所有符合谓词的元素的流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">List&lt;Integer&gt; odds = numbers.stream().filter(n -&gt; n % <span class="number">2</span> == <span class="number">1</span>).collect(toList());</span><br></pre></td></tr></table></figure>
+<p><code>distinct()</code>方法会返回一个元素各异（根据流锁生成元素的<code>hashCode</code>和<code>equals</code>方法是实现）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>).distinct().forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<p><code>limit(n)</code>方法会返回一个不超过给定长度的流，所需的长度作为参数传递给<code>limit</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>).limit(<span class="number">3</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<p><code>skip(n)</code>方法返回一个扔掉了前n个元素的流，如果流中元素不足n个，则返回一个空流。<code>limit(n)</code>和<code>skip(n)</code>是互补的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>).skip(<span class="number">2</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<h3 id="映射">映射</h3>
+<p><code>map</code>方法接受一个函数作为参数，这个函数会被应用到每个元素上，并将其映射成一个新的元素，返回一个新元素的流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Actions"</span>);</span><br><span class="line">List&lt;Integer&gt; wordLengths = words.stream().map(String::length).collect(toList());</span><br></pre></td></tr></table></figure>
+<p><code>flatMap</code>方法将一个流中的每个值都换成另一个流，然后把所有的流连接起来成为一个流。简而言之，就是把流中的函数参数所产生的流中的元素提取出来后组合为一个新的流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Actions"</span>);</span><br><span class="line">List&lt;String&gt; uniqueCharacters = </span><br><span class="line">    words.stream()</span><br><span class="line">    .map(w -&gt; w.split(<span class="string">""</span>))   <span class="comment">// 返回Stream&lt;String[]&gt;</span></span><br><span class="line">    .flatMap(Arrays::stream)  <span class="comment">//Array::stream将String[]转换为Stream&lt;String&gt;, flatMap将所                                 有Stream中的String提取出来并合成为一个新的Stream&lt;String&gt;</span></span><br><span class="line">    .distinct()</span><br><span class="line">    .collect(toList())</span><br></pre></td></tr></table></figure>
+<h3 id="查找和匹配">查找和匹配</h3>
+<p><code>anyMatch</code>可以检查流中是否有一个元素能匹配给定的谓词。</p>
+<p><code>allMatch</code>检查流中的元素是否都能匹配给定谓词。</p>
+<p><code>noneMatch</code>确保流中没有任何元素与给定谓词匹配。</p>
+<p><code>findAny</code>方法将返回当前流中的任意元素。</p>
+<p><code>findFirst</code>方法查找流中第一个元素。</p>
+<h3 id="归约">归约</h3>
+<p><code>reduce</code>操作可以将流中所有元素反复结合起来，得到一个值，这样的查询操作被称为归约操作（将流归约为一个值）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 元素求和</span></span><br><span class="line"><span class="keyword">int</span> sum = numbers.stream().reduce(<span class="number">0</span>, (a ,b) -&gt; a + b);</span><br></pre></td></tr></table></figure>
+<p><code>reduce</code>接受两个参数：</p>
+<ol style="list-style-type: decimal">
+<li>一个是初始值。</li>
+<li>一个<code>BinaryOperator&lt;T&gt;</code>来将两个元素结合起来产生一个新值。</li>
+</ol>
+<p><code>reduce</code>还有一个重载变体，它不接受初始值，但是会返回一个<code>Opetional</code>对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Opetional&lt;Integer&gt; sum = numbers.stream().reduce((a, b) -&gt; a + b);</span><br></pre></td></tr></table></figure>
+<h3 id="构建流">构建流</h3>
+<p>可直接使用静态方法<code>Stream.of</code>方法，通过显示值创建一个流，它接受任意数量的参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; stream = Stream.of(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Action"</span>);</span><br><span class="line">stream.map(String::toUpperCase).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<p>可以使用<code>empty</code>得到一个空流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; emptySteam = Stream.empty();</span><br></pre></td></tr></table></figure>
+<p>可以使用静态方法<code>Arrays.stream</code>从数组创建一个流，它接受一个数组作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> sum = Arrays.stream(numbers);</span><br></pre></td></tr></table></figure>
+<p><code>Stream API</code>提供了两个静态方法来从函数生成流：<code>Stream.iterate</code>和<code>Stream.generate</code>。这两个操作可以创建无限流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stream.iterate(<span class="number">0</span>, n -&gt; n + <span class="number">2</span>).limit(<span class="number">10</span>).forEach(System.out::println);</span><br><span class="line">Stream.generate(Math::random).limit(<span class="number">5</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<h3 id="收集器">收集器</h3>
 
       
     </div>
@@ -592,7 +632,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/neural-network/" rel="next" title="神经网络">
+              <a href="/2018/06/27/神经网络/" rel="next" title="神经网络">
                 <i class="fa fa-chevron-left"></i> 神经网络
               </a>
             
@@ -602,7 +642,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/05/em_algorithm/" rel="prev" title="EM算法">
+              <a href="/2018/09/05/EM算法/" rel="prev" title="EM算法">
                 EM算法 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -757,7 +797,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-8-新特性"><span class="nav-number">1.</span> <span class="nav-text">Java 8 新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda表达式"><span class="nav-number">1.1.</span> <span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式接口"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数式接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法引用"><span class="nav-number">1.1.3.</span> <span class="nav-text">方法引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流"><span class="nav-number">1.2.</span> <span class="nav-text">流</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-8-新特性"><span class="nav-number">1.</span> <span class="nav-text">Java 8 新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda表达式"><span class="nav-number">1.1.</span> <span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式接口"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数式接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法引用"><span class="nav-number">1.1.3.</span> <span class="nav-text">方法引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流"><span class="nav-number">1.2.</span> <span class="nav-text">流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#筛选和切片"><span class="nav-number">1.2.1.</span> <span class="nav-text">筛选和切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射"><span class="nav-number">1.2.2.</span> <span class="nav-text">映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找和匹配"><span class="nav-number">1.2.3.</span> <span class="nav-text">查找和匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归约"><span class="nav-number">1.2.4.</span> <span class="nav-text">归约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建流"><span class="nav-number">1.2.5.</span> <span class="nav-text">构建流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收集器"><span class="nav-number">1.2.6.</span> <span class="nav-text">收集器</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

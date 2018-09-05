@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mejhwu.github.io/"/>
-  <updated>2018-06-27T12:58:31.395Z</updated>
+  <updated>2018-09-05T12:11:16.195Z</updated>
   <id>https://mejhwu.github.io/</id>
   
   <author>
@@ -17,20 +17,72 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>神经网络</title>
-    <link href="https://mejhwu.github.io/2018/06/27/neural-network/"/>
-    <id>https://mejhwu.github.io/2018/06/27/neural-network/</id>
-    <published>2018-06-27T12:41:46.000Z</published>
-    <updated>2018-06-27T12:58:31.395Z</updated>
+    <title>EM算法</title>
+    <link href="https://mejhwu.github.io/2018/09/05/em_algorithm/"/>
+    <id>https://mejhwu.github.io/2018/09/05/em_algorithm/</id>
+    <published>2018-09-04T16:00:00.000Z</published>
+    <updated>2018-09-05T12:11:16.195Z</updated>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="em算法">EM算法</h1>]]></content>
     
     <summary type="html">
     
       
       
-        
+        &lt;h1 id=&quot;em算法&quot;&gt;EM算法&lt;/h1&gt;
 
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://mejhwu.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java 8 新特性</title>
+    <link href="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/"/>
+    <id>https://mejhwu.github.io/2018/09/05/new_feature_in_java8/</id>
+    <published>2018-09-04T16:00:00.000Z</published>
+    <updated>2018-09-05T13:30:23.918Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="java-8-新特性">Java 8 新特性</h1><h2 id="lambda表达式">Lambda表达式</h2><p>lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。</p><p>lambda表达式有3个部分：</p><pre><code>            1. 参数列表    2. 箭头(-&gt;)    3. lambda主体</code></pre><p>下面是一个lambda表达式的例子：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a + b;</span><br></pre></td></tr></table></figure><p>在上面的例子中，<code>(int a, int b)</code>是参数列表，参数类型可省略<code>（a, b)</code>。lambda主体为<code>a + b</code>。</p><h3 id="函数式接口">函数式接口</h3><p>函数式接口就是只定义了一个抽象方法的接口，比如</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(T o1, T o2)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123;Su</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>lambda表达式允许直接以内联的形式为函数式接口的抽象方法提供实现，并把整个表达式作为函数式接口的实例。类似与匿名内部类，lambda表达式相对与匿名内部类而言更加简洁：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Runnable r1 = () -&gt; System.out.println(<span class="string">"Hello World 1"</span>);</span><br><span class="line"></span><br><span class="line">Runnable r2 = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World 2"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>函数式接口的抽象方法的签名就是lambda表达式的签名，这种抽象方法叫做函数描述符。在将lambda表达式作为参数传递或赋值给变量的时候需要做类型检测，要求lambda表达式的签名与函数式接口的抽象方法的签名一致。</p><p>常见的函数时接口有：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FuncationInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Consumer</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">accept</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FuncationInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Function</span>&lt;<span class="title">T</span>, <span class="title">R</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">R <span class="title">apply</span><span class="params">(T t)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure><p><code>@FunctionInterface</code>用于标注该接口会设计为一个函数式接口，如果使用<code>@FunctionInterface</code>定义了一个接口，但它不是函数式接口的时候编译器就会返回一个提示原因的错误。</p><p>除了以上3个通用的函数式接口外，java8还提供了一些专为特定类型设计的接口。</p><table><thead><tr class="header"><th align="left">函数式接口</th><th>函数描述符</th><th>原始类型特化</th></tr></thead><tbody><tr class="odd"><td align="left"><code>Predicate&lt;T&gt;</code></td><td><code>T -&gt; boolean</code></td><td><code>IntPredicate, LongPredicate, DoublePredicate</code></td></tr><tr class="even"><td align="left"><code>Consumer&lt;T&gt;</code></td><td><code>T -&gt; void</code></td><td><code>IntConsumer, LongConsumer, DoubleConsumer</code></td></tr><tr class="odd"><td align="left"><code>Functino&lt;T,R&gt;</code></td><td><code>T -&gt; R</code></td><td><code>IntFuncation&lt;R&gt;, IntToDoubleFunction, ...</code></td></tr><tr class="even"><td align="left"><code>Supplier&lt;T&gt;</code></td><td><code>() -&gt; T</code></td><td><code>BooleanSupplier, IntSupplier, ...</code></td></tr><tr class="odd"><td align="left"><code>UnaryOperator&lt;T&gt;</code></td><td><code>T -&gt; T</code></td><td><code>IntUnaryOperator, LongUnaryOperator, ...</code></td></tr><tr class="even"><td align="left"><code>BinaryOperator&lt;T&gt;</code></td><td><code>(T, T) -&gt; T</code></td><td><code>IntBinaryOperator, LongBinaryOperator, ...</code></td></tr><tr class="odd"><td align="left"><code>BiPredicate&lt;L, R&gt;</code></td><td><code>(L, R) -&gt; boolean</code></td><td></td></tr><tr class="even"><td align="left"><code>BiConsumer&lt;T, U&gt;</code></td><td><code>(T, U) -&gt; void</code></td><td><code>ObjIntConsumer&lt;T&gt;, ObjLongConsumer&lt;T&gt;, ...</code></td></tr><tr class="odd"><td align="left"><code>BiFunction&lt;T,U,R&gt;</code></td><td><code>(T, U) -&gt; R</code></td><td><code>ToIntBiFunction&lt;T, U&gt;, ...</code></td></tr></tbody></table><h3 id="类型检测">类型检测</h3><p>Lambda的类型是从使用Lambda的上下文中推断出来的，上下文中Lambda表达式需要的类型称为目标类型。统一个Lambda表达式可以与不同的函数式接口联系起来，只要它们的抽象方法的签名能够兼容。比如<code>Callable</code>和<code>PrivilegeAction</code>的抽象方法的方法签名都是无参数并返回一个T。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Callable&lt;Integer&gt; c = () -&gt; <span class="number">42</span>;</span><br><span class="line">PrevilegedAction&lt;Integer&gt; p = () -&gt; <span class="number">42</span>;</span><br></pre></td></tr></table></figure><h3 id="方法引用">方法引用</h3><p>方法引用就是让你可以重复使用现有的方法定义，并可以想Lambda表达式一样传递。</p><p>方法引用主要有三类：</p><p>（1） 只想静态方法的方法引用（如<code>Interger</code>的<code>parseInt</code>方法，写作<code>Integer::parseInt</code>）</p><p>（2） 指向任意类型实例方法的方法引用（如<code>String</code>的<code>length</code>方法，写作<code>String::length</code>）</p><p>（3） 指向现有对象的的实例方法。</p><p>方法引用可以与Lambda相对应。</p><p>（1） Lambda ——— <code>(args) -&gt; ClassName.staticMethod(args)</code></p><p>​ 方法引用 ——— <code>ClassName::staticMethod</code></p><p>（2） Lambda ——— <code>(arg0, arg1) -&gt; arg0.instanceMethod(arg1)</code></p><p>​ 方法引用 ——— <code>ClassName::instanceMethod</code></p><p>（3） Lambda ——— <code>(args) -&gt; expr.instanceMethod(args)</code></p><p>​ 方法引用 ——— <code>expr::instanceMethod</code></p><p>对于一个现有的构造函数，可以利用它的名称和关键字<code>new</code>来创建一个引用：<code>ClassName::new</code>。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Supplier&lt;Apple&gt; s = Apple::<span class="keyword">new</span>;</span><br><span class="line">Apple a = s.get();</span><br><span class="line"></span><br><span class="line">等价于</span><br><span class="line"></span><br><span class="line">Supplier&lt;Apple&gt; s = () -&gt; <span class="keyword">new</span> Apple();</span><br><span class="line">Apple a = s.get();</span><br></pre></td></tr></table></figure><h2 id="流">流</h2><p>流简单来说就是“从支持数据处理操作的源生成的元素序列”。流操作的两个重要特点：</p><ol style="list-style-type: decimal"><li>流水线 —— 很多流操作本身会返回一个流，这样多个操作就可以链接起来，形成一个大的流水线。</li><li>内部迭代 —— 与使用迭代器显示迭代不同，流的迭代操作是在背后进行的。</li></ol><p>流中的数据只能遍历一次，遍历完后，这个流就已经被消费掉了。</p><p><code>java.util.stream.Stream</code>接口中定义了许多操作，可以大致分为两类，中间操作和终端操作。中间操作会返回另外一个流，终端操作会从流的流水线生成结果。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">long</span> res = numbers.stream()</span><br><span class="line">    .filter(n -&gt; n &gt; <span class="number">3</span>)</span><br><span class="line">    .map(n -&gt; n * n)</span><br><span class="line">    .count();</span><br></pre></td></tr></table></figure><table><thead><tr class="header"><th>操作</th><th>类型</th><th>返回类型</th><th>函数描述符</th></tr></thead><tbody><tr class="odd"><td>filter</td><td>中间</td><td>Stream<t></t></td><td>T -&gt; boolean</td></tr><tr class="even"><td>map</td><td>中间</td><td>Stream<r></r></td><td>T -&gt; R</td></tr><tr class="odd"><td>limit</td><td>中间</td><td>Stream<t></t></td><td></td></tr><tr class="even"><td>sorted</td><td>中间</td><td>Stream<t></t></td><td>(T, T) -&gt; int</td></tr><tr class="odd"><td>distinct</td><td>中间</td><td>Stream<t></t></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr></tbody></table><table><thead><tr class="header"><th>操作</th><th>类型</th><th>目的</th></tr></thead><tbody><tr class="odd"><td>forEach</td><td>终端</td><td>消费流中的每个元素并对其应用Lambda。返回void。</td></tr><tr class="even"><td>count</td><td>终端</td><td>返回流中元素的个数。返回long。</td></tr><tr class="odd"><td>collect</td><td>终端</td><td>把流归约成一个集合，比如List、Map、Integer。</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;java-8-新特性&quot;&gt;Java 8 新特性&lt;/h1&gt;
+&lt;h2 id=&quot;lambda表达式&quot;&gt;Lambda表达式&lt;/h2&gt;
+&lt;p&gt;lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。&lt;/p&gt;
+&lt;p&gt;lambda
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://mejhwu.github.io/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>神经网络</title>
+    <link href="https://mejhwu.github.io/2018/06/27/neural-network/"/>
+    <id>https://mejhwu.github.io/2018/06/27/neural-network/</id>
+    <published>2018-06-27T12:41:46.000Z</published>
+    <updated>2018-06-28T03:56:14.926Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="神经网络">神经网络</h1><h2 id="神经元模型">神经元模型</h2><p>神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。</p><p>神经元模型中，神经元接受<span class="math inline">\(n\)</span>个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。</p><p>常用的激活函数为<span class="math inline">\(sigmoid(x)\)</span>函数。</p><p><span class="math display">\[sigmoid(x)=\frac{1}{1+e^{-x}}\]</span></p><h2 id="感知机与多层网络">感知机与多层网络</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;神经网络&quot;&gt;神经网络&lt;/h1&gt;
+&lt;h2 id=&quot;神经元模型&quot;&gt;神经元模型&lt;/h2&gt;
+&lt;p&gt;神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。&lt;/p&gt;
+&lt;p&gt;神经元模型中，神经元
       
     
     </summary>

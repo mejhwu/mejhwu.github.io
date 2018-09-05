@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 8 新特性">
+<meta property="og:url" content="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-05T13:30:23.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 8 新特性">
+<meta name="twitter:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java 8 新特性 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/05/new_feature_in_java8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jhwu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java 8 新特性
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-05 00:00:00 / Modified: 21:30:23" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="java-8-新特性">Java 8 新特性</h1>
+<h2 id="lambda表达式">Lambda表达式</h2>
+<p>lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。</p>
+<p>lambda表达式有3个部分：</p>
+<pre><code>            1. 参数列表
+    2. 箭头(-&gt;)
+    3. lambda主体</code></pre>
+<p>下面是一个lambda表达式的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a + b;</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，<code>(int a, int b)</code>是参数列表，参数类型可省略<code>（a, b)</code>。lambda主体为<code>a + b</code>。</p>
+<h3 id="函数式接口">函数式接口</h3>
+<p>函数式接口就是只定义了一个抽象方法的接口，比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(T o1, T o2)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123;Su</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>lambda表达式允许直接以内联的形式为函数式接口的抽象方法提供实现，并把整个表达式作为函数式接口的实例。类似与匿名内部类，lambda表达式相对与匿名内部类而言更加简洁：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Runnable r1 = () -&gt; System.out.println(<span class="string">"Hello World 1"</span>);</span><br><span class="line"></span><br><span class="line">Runnable r2 = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World 2"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数式接口的抽象方法的签名就是lambda表达式的签名，这种抽象方法叫做函数描述符。在将lambda表达式作为参数传递或赋值给变量的时候需要做类型检测，要求lambda表达式的签名与函数式接口的抽象方法的签名一致。</p>
+<p>常见的函数时接口有：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FuncationInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Consumer</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">accept</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FuncationInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Function</span>&lt;<span class="title">T</span>, <span class="title">R</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">R <span class="title">apply</span><span class="params">(T t)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><code>@FunctionInterface</code>用于标注该接口会设计为一个函数式接口，如果使用<code>@FunctionInterface</code>定义了一个接口，但它不是函数式接口的时候编译器就会返回一个提示原因的错误。</p>
+<p>除了以上3个通用的函数式接口外，java8还提供了一些专为特定类型设计的接口。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">函数式接口</th>
+<th>函数描述符</th>
+<th>原始类型特化</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Predicate&lt;T&gt;</code></td>
+<td><code>T -&gt; boolean</code></td>
+<td><code>IntPredicate, LongPredicate, DoublePredicate</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>Consumer&lt;T&gt;</code></td>
+<td><code>T -&gt; void</code></td>
+<td><code>IntConsumer, LongConsumer, DoubleConsumer</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Functino&lt;T,R&gt;</code></td>
+<td><code>T -&gt; R</code></td>
+<td><code>IntFuncation&lt;R&gt;, IntToDoubleFunction, ...</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>Supplier&lt;T&gt;</code></td>
+<td><code>() -&gt; T</code></td>
+<td><code>BooleanSupplier, IntSupplier, ...</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>UnaryOperator&lt;T&gt;</code></td>
+<td><code>T -&gt; T</code></td>
+<td><code>IntUnaryOperator, LongUnaryOperator, ...</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>BinaryOperator&lt;T&gt;</code></td>
+<td><code>(T, T) -&gt; T</code></td>
+<td><code>IntBinaryOperator, LongBinaryOperator, ...</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>BiPredicate&lt;L, R&gt;</code></td>
+<td><code>(L, R) -&gt; boolean</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>BiConsumer&lt;T, U&gt;</code></td>
+<td><code>(T, U) -&gt; void</code></td>
+<td><code>ObjIntConsumer&lt;T&gt;, ObjLongConsumer&lt;T&gt;, ...</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>BiFunction&lt;T,U,R&gt;</code></td>
+<td><code>(T, U) -&gt; R</code></td>
+<td><code>ToIntBiFunction&lt;T, U&gt;, ...</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="类型检测">类型检测</h3>
+<p>Lambda的类型是从使用Lambda的上下文中推断出来的，上下文中Lambda表达式需要的类型称为目标类型。统一个Lambda表达式可以与不同的函数式接口联系起来，只要它们的抽象方法的签名能够兼容。比如<code>Callable</code>和<code>PrivilegeAction</code>的抽象方法的方法签名都是无参数并返回一个T。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Callable&lt;Integer&gt; c = () -&gt; <span class="number">42</span>;</span><br><span class="line">PrevilegedAction&lt;Integer&gt; p = () -&gt; <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="方法引用">方法引用</h3>
+<p>方法引用就是让你可以重复使用现有的方法定义，并可以想Lambda表达式一样传递。</p>
+<p>方法引用主要有三类：</p>
+<p>（1） 只想静态方法的方法引用（如<code>Interger</code>的<code>parseInt</code>方法，写作<code>Integer::parseInt</code>）</p>
+<p>（2） 指向任意类型实例方法的方法引用（如<code>String</code>的<code>length</code>方法，写作<code>String::length</code>）</p>
+<p>（3） 指向现有对象的的实例方法。</p>
+<p>方法引用可以与Lambda相对应。</p>
+<p>（1） Lambda ——— <code>(args) -&gt; ClassName.staticMethod(args)</code></p>
+<p>​ 方法引用 ——— <code>ClassName::staticMethod</code></p>
+<p>（2） Lambda ——— <code>(arg0, arg1) -&gt; arg0.instanceMethod(arg1)</code></p>
+<p>​ 方法引用 ——— <code>ClassName::instanceMethod</code></p>
+<p>（3） Lambda ——— <code>(args) -&gt; expr.instanceMethod(args)</code></p>
+<p>​ 方法引用 ——— <code>expr::instanceMethod</code></p>
+<p>对于一个现有的构造函数，可以利用它的名称和关键字<code>new</code>来创建一个引用：<code>ClassName::new</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Supplier&lt;Apple&gt; s = Apple::<span class="keyword">new</span>;</span><br><span class="line">Apple a = s.get();</span><br><span class="line"></span><br><span class="line">等价于</span><br><span class="line"></span><br><span class="line">Supplier&lt;Apple&gt; s = () -&gt; <span class="keyword">new</span> Apple();</span><br><span class="line">Apple a = s.get();</span><br></pre></td></tr></table></figure>
+<h2 id="流">流</h2>
+<p>流简单来说就是“从支持数据处理操作的源生成的元素序列”。流操作的两个重要特点：</p>
+<ol style="list-style-type: decimal">
+<li>流水线 —— 很多流操作本身会返回一个流，这样多个操作就可以链接起来，形成一个大的流水线。</li>
+<li>内部迭代 —— 与使用迭代器显示迭代不同，流的迭代操作是在背后进行的。</li>
+</ol>
+<p>流中的数据只能遍历一次，遍历完后，这个流就已经被消费掉了。</p>
+<p><code>java.util.stream.Stream</code>接口中定义了许多操作，可以大致分为两类，中间操作和终端操作。中间操作会返回另外一个流，终端操作会从流的流水线生成结果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">long</span> res = numbers.stream()</span><br><span class="line">    .filter(n -&gt; n &gt; <span class="number">3</span>)</span><br><span class="line">    .map(n -&gt; n * n)</span><br><span class="line">    .count();</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr class="header">
+<th>操作</th>
+<th>类型</th>
+<th>返回类型</th>
+<th>函数描述符</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>filter</td>
+<td>中间</td>
+<td>Stream<t></t></td>
+<td>T -&gt; boolean</td>
+</tr>
+<tr class="even">
+<td>map</td>
+<td>中间</td>
+<td>Stream<r></r></td>
+<td>T -&gt; R</td>
+</tr>
+<tr class="odd">
+<td>limit</td>
+<td>中间</td>
+<td>Stream<t></t></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sorted</td>
+<td>中间</td>
+<td>Stream<t></t></td>
+<td>(T, T) -&gt; int</td>
+</tr>
+<tr class="odd">
+<td>distinct</td>
+<td>中间</td>
+<td>Stream<t></t></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>操作</th>
+<th>类型</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>forEach</td>
+<td>终端</td>
+<td>消费流中的每个元素并对其应用Lambda。返回void。</td>
+</tr>
+<tr class="even">
+<td>count</td>
+<td>终端</td>
+<td>返回流中元素的个数。返回long。</td>
+</tr>
+<tr class="odd">
+<td>collect</td>
+<td>终端</td>
+<td>把流归约成一个集合，比如List、Map、Integer。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/27/neural-network/" rel="next" title="神经网络">
+                <i class="fa fa-chevron-left"></i> 神经网络
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/05/em_algorithm/" rel="prev" title="EM算法">
+                EM算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">jhwu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-8-新特性"><span class="nav-number">1.</span> <span class="nav-text">Java 8 新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda表达式"><span class="nav-number">1.1.</span> <span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式接口"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数式接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法引用"><span class="nav-number">1.1.3.</span> <span class="nav-text">方法引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流"><span class="nav-number">1.2.</span> <span class="nav-text">流</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jhwu</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

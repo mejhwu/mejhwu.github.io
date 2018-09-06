@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
+  <meta name="description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：  参数列表 箭头(-&amp;gt;) lambda主体  下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，(int a, int b)是参数列表，参数类型可省略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 8 新特性">
 <meta property="og:url" content="https://mejhwu.github.io/2018/09/05/java8新特性/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
+<meta property="og:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：  参数列表 箭头(-&amp;gt;) lambda主体  下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，(int a, int b)是参数列表，参数类型可省略">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T14:18:45.084Z">
+<meta property="og:updated_time" content="2018-09-05T14:50:25.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 8 新特性">
-<meta name="twitter:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：             1. 参数列表     2. 箭头(-&amp;gt;)     3. lambda主体 下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，">
+<meta name="twitter:description" content="Java 8 新特性 Lambda表达式 lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。 lambda表达式有3个部分：  参数列表 箭头(-&amp;gt;) lambda主体  下面是一个lambda表达式的例子： 1(int a, int b) -&amp;gt; a + b; 在上面的例子中，(int a, int b)是参数列表，参数类型可省略">
 
 
 
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2018-09-05 00:00:00 / Modified: 22:18:45" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
+              <time title="Created: 2018-09-05 00:00:00 / Modified: 22:50:25" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
             
 
             
@@ -392,9 +392,11 @@
 <h2 id="lambda表达式">Lambda表达式</h2>
 <p>lambda表达式可理解为简洁地表示可传递的匿名函数的一种方式：没有名称，有参数列表、函数主体、返回类型。</p>
 <p>lambda表达式有3个部分：</p>
-<pre><code>            1. 参数列表
-    2. 箭头(-&gt;)
-    3. lambda主体</code></pre>
+<ol style="list-style-type: decimal">
+<li>参数列表</li>
+<li>箭头(-&gt;)</li>
+<li>lambda主体</li>
+</ol>
 <p>下面是一个lambda表达式的例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a + b;</span><br></pre></td></tr></table></figure>
 <p>在上面的例子中，<code>(int a, int b)</code>是参数列表，参数类型可省略<code>（a, b)</code>。lambda主体为<code>a + b</code>。</p>
@@ -567,18 +569,18 @@
 </table>
 <h3 id="筛选和切片">筛选和切片</h3>
 <p><code>Stream</code>接口支持<code>filter</code>，该操作会接受一个谓词（一个返回<code>boolean</code>的函数）作为参数，并返回一个包括所有符合谓词的元素的流。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">List&lt;Integer&gt; odds = numbers.stream().filter(n -&gt; n % <span class="number">2</span> == <span class="number">1</span>).collect(toList());</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">List&lt;Integer&gt; odds = numbers.stream()</span><br><span class="line">    .filter(n -&gt; n % <span class="number">2</span> == <span class="number">1</span>).collect(toList());</span><br></pre></td></tr></table></figure>
 <p><code>distinct()</code>方法会返回一个元素各异（根据流锁生成元素的<code>hashCode</code>和<code>equals</code>方法是实现）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>).distinct().forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">    .distinct().forEach(System.out::println);</span><br></pre></td></tr></table></figure>
 <p><code>limit(n)</code>方法会返回一个不超过给定长度的流，所需的长度作为参数传递给<code>limit</code>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>).limit(<span class="number">3</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">    .limit(<span class="number">3</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
 <p><code>skip(n)</code>方法返回一个扔掉了前n个元素的流，如果流中元素不足n个，则返回一个空流。<code>limit(n)</code>和<code>skip(n)</code>是互补的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>).skip(<span class="number">2</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>);</span><br><span class="line">numbers.stream().filter(i -&gt; i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">    .skip(<span class="number">2</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
 <h3 id="映射">映射</h3>
 <p><code>map</code>方法接受一个函数作为参数，这个函数会被应用到每个元素上，并将其映射成一个新的元素，返回一个新元素的流。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Actions"</span>);</span><br><span class="line">List&lt;Integer&gt; wordLengths = words.stream().map(String::length).collect(toList());</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Actions"</span>);</span><br><span class="line">List&lt;Integer&gt; wordLengths = words.stream()</span><br><span class="line">    .map(String::length).collect(toList());</span><br></pre></td></tr></table></figure>
 <p><code>flatMap</code>方法将一个流中的每个值都换成另一个流，然后把所有的流连接起来成为一个流。简而言之，就是把流中的函数参数所产生的流中的元素提取出来后组合为一个新的流。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Actions"</span>);</span><br><span class="line">List&lt;String&gt; uniqueCharacters = </span><br><span class="line">    words.stream()</span><br><span class="line">    .map(w -&gt; w.split(<span class="string">""</span>))   <span class="comment">// 返回Stream&lt;String[]&gt;</span></span><br><span class="line">    .flatMap(Arrays::stream)  <span class="comment">//Array::stream将String[]转换为Stream&lt;String&gt;, flatMap将所                                 有Stream中的String提取出来并合成为一个新的Stream&lt;String&gt;</span></span><br><span class="line">    .distinct()</span><br><span class="line">    .collect(toList())</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Java 8"</span>, <span class="string">"Lambdas"</span>, <span class="string">"In"</span>, <span class="string">"Actions"</span>);</span><br><span class="line">List&lt;String&gt; uniqueCharacters = </span><br><span class="line">    words.stream()</span><br><span class="line">    .map(w -&gt; w.split(<span class="string">""</span>))   <span class="comment">// 返回Stream&lt;String[]&gt;</span></span><br><span class="line">    <span class="comment">// Array::stream将String[]转换为Stream&lt;String&gt;, flatMap将所                             // 有Stream中的String提取出来并合成为一个新的Stream&lt;String&gt;</span></span><br><span class="line">    .flatMap(Arrays::stream)  </span><br><span class="line">    .distinct()</span><br><span class="line">    .collect(toList())</span><br></pre></td></tr></table></figure>
 <h3 id="查找和匹配">查找和匹配</h3>
 <p><code>anyMatch</code>可以检查流中是否有一个元素能匹配给定的谓词。</p>
 <p><code>allMatch</code>检查流中的元素是否都能匹配给定谓词。</p>
@@ -632,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/神经网络/" rel="next" title="神经网络">
-                <i class="fa fa-chevron-left"></i> 神经网络
+              <a href="/2018/09/05/线性回归/" rel="next" title="线性回归">
+                <i class="fa fa-chevron-left"></i> 线性回归
               </a>
             
           </div>
@@ -718,7 +720,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mejhwu.github.io/"/>
-  <updated>2018-09-05T12:11:16.195Z</updated>
+  <updated>2018-09-09T03:01:01.424Z</updated>
   <id>https://mejhwu.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工厂模式</title>
+    <link href="https://mejhwu.github.io/2018/09/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://mejhwu.github.io/2018/09/09/设计模式/工厂模式/</id>
+    <published>2018-09-08T16:00:00.000Z</published>
+    <updated>2018-09-09T03:01:01.424Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://mejhwu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>EM算法</title>
@@ -41,6 +65,31 @@
   </entry>
   
   <entry>
+    <title>线性回归</title>
+    <link href="https://mejhwu.github.io/2018/09/05/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+    <id>https://mejhwu.github.io/2018/09/05/线性回归/</id>
+    <published>2018-09-04T16:00:00.000Z</published>
+    <updated>2018-09-06T15:12:37.146Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线性回归">线性回归</h1><h2 id="基本线性模型">基本线性模型</h2><p>给定有<span class="math inline">\(d\)</span>个属性描述的实例<span class="math inline">\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)</span>，其中<span class="math inline">\(x_i\)</span>是<span class="math inline">\(\boldsymbol{x}\)</span>在第<span class="math inline">\(i\)</span>个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 <span class="math display">\[f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\cdot\cdot + w_dx_d + b\]</span> 一般用向量形式写成 <span class="math display">\[f(\boldsymbol{x})=\boldsymbol{w}^T \boldsymbol{x} + b\]</span> 其中<span class="math inline">\(\boldsymbol{w}=(w_1; w_2; ...; w_d)\)</span>. <span class="math inline">\(\boldsymbol{w}\)</span>和<span class="math inline">\(b\)</span>学得之后，模型就可以确定。</p><h2 id="线性回归-1">线性回归</h2><p>给定数据集<span class="math inline">\(D=\{(\boldsymbol{x_1}, y_1), (\boldsymbol{x_2}, y_2), \cdots, (\boldsymbol{x_m}, y_m),\}\)</span>，其中<span class="math inline">\(\boldsymbol{x_i}=(x_{i1}, x_{i2}, \cdots, x_{id}), y_i \in \mathbb{R}\)</span>. “线性回归”试图学的一个线性模型尽可能准确的预测实值输出标记。</p><p>对于离散值，若属性之间存在“序”关系，可通过连续化将其转化为连续值，如三属性值“高度”的取值为“高” “中” “矮”,可转化为{1.0, .0.5, 0.0}；若属性值之间不存在序关系，假定有<span class="math inline">\(k\)</span>个属性值，则通常转化为<span class="math inline">\(k\)</span>为向量。</p><p>线性回归试图学得<span class="math inline">\(f(x_i) = \boldsymbol{w^T} \boldsymbol{x}_i + b\)</span>，使得<span class="math inline">\(f(\boldsymbol{x}_i) \simeq y_i\)</span>。</p><p>回归问题中常用的损失函数（性能度量）是均方误差，令<span class="math inline">\(\boldsymbol{\theta}=(\boldsymbol{w}, b)\)</span>, 则均方误差可表示为： <span class="math display">\[\mathrm{J(\boldsymbol{\theta})}=\frac{1}{2}\sum_{i=1}^{m}(f(\boldsymbol{x}_i) - y_i)^2\]</span></p><h3 id="梯度下降">梯度下降</h3><p>最小化<span class="math inline">\(\mathrm{J}(\boldsymbol{\theta})\)</span>是一个最优化问题，可以采用梯度下降算法或牛顿法求解。</p><h3 id="最小二乘法">最小二乘法</h3><p>首先考虑<span class="math inline">\(x\)</span>只有一个属性，可以试图让均方误差最小化，即 <span class="math display">\[\begin{align}(w^*, b^*) &amp; =  \arg\min_{(w, b)}\sum_{i=1}^{m}(f(x_i) - y_i)^2  \\                   &amp; = \arg\min_{(w,b)}\sum_{i=1}^m(y_I - wx_i -b)^2\end{align}\]</span> 基于均方误差最小化来进行模型求解的的方法称为“最小二乘法”（least square method). 在线性回归中，最小二乘法就是找到一条直线，使得所有样本到直线上的欧式距离之和最小。</p><p>求解<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>使<span class="math inline">\(E_{(w,b)}=\sum_{i=1}^m(y_i-wx_i-b)^2\)</span>最小化的过程，称为线性回归模型的最小二乘“参数估计“(parameter estimation). 将<span class="math inline">\(E_{(w,b)}\)</span>分别对<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>求导，得到 <span class="math display">\[\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2 - \sum_{i=1}^m (y_i - b)x_i)\]</span></p><p><span class="math display">\[\frac{\partial E_{(w,b)}}{\partial b} = 2(mb - \sum_{i=1}^m(y_i-wx_i))\]</span></p><p>令是（6）和式（7）分别等于0，可得到<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>的最优解的闭式解 <span class="math display">\[w=\frac{\sum_{i=1}^m y_i(x_i - \bar{x})}{\sum_{i=1}^mx_i^2 - \frac{1}{m}(\sum_{i=1}^mx_i)^2}\]</span></p><p><span class="math display">\[b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)\]</span></p><p>当<span class="math inline">\(\boldsymbol{x}\)</span>由<span class="math inline">\(d\)</span>个属性描述时，把数据集<span class="math inline">\(D\)</span>表示为一个<span class="math inline">\(m \times (d + 1)\)</span>大小的矩阵<span class="math inline">\(\mathrm{X}\)</span>，每一行的前<span class="math inline">\(d\)</span>个属性对应于样本的<span class="math inline">\(d\)</span>个属性值，最后一个元素恒置为1，即 <span class="math display">\[\mathrm{X} =   \left[ \begin{matrix}             x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d} &amp; 1 \\                      x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} &amp; 1 \\                      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\                      x_{m1} &amp; x_{m2} &amp; \cdots &amp; x_{md} &amp; 1            \end{matrix} \right]        =   \left[ \begin{matrix}             \boldsymbol{x}_1^T &amp; 1 \\                      \boldsymbol{x}_2^T  &amp; 1 \\                      \vdots &amp; \vdots \\                      \boldsymbol{x}_m^T  &amp; 1            \end{matrix} \right]\]</span> 将标记写为向量形式<span class="math inline">\(\boldsymbol{y}=(y_1, y_2, \cdots, y_m)\)</span>， 则有 <span class="math display">\[\boldsymbol{\theta}^* = \arg\min_{\boldsymbol{\theta}}(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})\]</span> 令<span class="math inline">\(E_{\boldsymbol{\theta}}=(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})\)</span>，对<span class="math inline">\(\boldsymbol{\theta}\)</span>求导得到 <span class="math display">\[\frac{\partial{E_{\boldsymbol{\theta}}}}{\partial{\boldsymbol{\theta}}}=2 \mathrm{X}^T(\mathrm{X}\boldsymbol{\theta}-\boldsymbol{y})\]</span> 令上式等于零，即可求得<span class="math inline">\(\boldsymbol{\theta}\)</span>的最优解的闭式解。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;线性回归&quot;&gt;线性回归&lt;/h1&gt;
+&lt;h2 id=&quot;基本线性模型&quot;&gt;基本线性模型&lt;/h2&gt;
+&lt;p&gt;给定有&lt;span class=&quot;math inline&quot;&gt;\(d\)&lt;/span&gt;个属性描述的实例&lt;span class=&quot;math inline&quot;&gt;\(\boldsym
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://mejhwu.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java 8 新特性</title>
     <link href="https://mejhwu.github.io/2018/09/05/java8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     <id>https://mejhwu.github.io/2018/09/05/java8新特性/</id>
@@ -63,31 +112,6 @@
     
       <category term="java" scheme="https://mejhwu.github.io/categories/java/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>线性回归</title>
-    <link href="https://mejhwu.github.io/2018/09/05/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
-    <id>https://mejhwu.github.io/2018/09/05/线性回归/</id>
-    <published>2018-09-04T16:00:00.000Z</published>
-    <updated>2018-09-06T15:12:37.146Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="线性回归">线性回归</h1><h2 id="基本线性模型">基本线性模型</h2><p>给定有<span class="math inline">\(d\)</span>个属性描述的实例<span class="math inline">\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)</span>，其中<span class="math inline">\(x_i\)</span>是<span class="math inline">\(\boldsymbol{x}\)</span>在第<span class="math inline">\(i\)</span>个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 <span class="math display">\[f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\cdot\cdot + w_dx_d + b\]</span> 一般用向量形式写成 <span class="math display">\[f(\boldsymbol{x})=\boldsymbol{w}^T \boldsymbol{x} + b\]</span> 其中<span class="math inline">\(\boldsymbol{w}=(w_1; w_2; ...; w_d)\)</span>. <span class="math inline">\(\boldsymbol{w}\)</span>和<span class="math inline">\(b\)</span>学得之后，模型就可以确定。</p><h2 id="线性回归-1">线性回归</h2><p>给定数据集<span class="math inline">\(D=\{(\boldsymbol{x_1}, y_1), (\boldsymbol{x_2}, y_2), \cdots, (\boldsymbol{x_m}, y_m),\}\)</span>，其中<span class="math inline">\(\boldsymbol{x_i}=(x_{i1}, x_{i2}, \cdots, x_{id}), y_i \in \mathbb{R}\)</span>. “线性回归”试图学的一个线性模型尽可能准确的预测实值输出标记。</p><p>对于离散值，若属性之间存在“序”关系，可通过连续化将其转化为连续值，如三属性值“高度”的取值为“高” “中” “矮”,可转化为{1.0, .0.5, 0.0}；若属性值之间不存在序关系，假定有<span class="math inline">\(k\)</span>个属性值，则通常转化为<span class="math inline">\(k\)</span>为向量。</p><p>线性回归试图学得<span class="math inline">\(f(x_i) = \boldsymbol{w^T} \boldsymbol{x}_i + b\)</span>，使得<span class="math inline">\(f(\boldsymbol{x}_i) \simeq y_i\)</span>。</p><p>回归问题中常用的损失函数（性能度量）是均方误差，令<span class="math inline">\(\boldsymbol{\theta}=(\boldsymbol{w}, b)\)</span>, 则均方误差可表示为： <span class="math display">\[\mathrm{J(\boldsymbol{\theta})}=\frac{1}{2}\sum_{i=1}^{m}(f(\boldsymbol{x}_i) - y_i)^2\]</span></p><h3 id="梯度下降">梯度下降</h3><p>最小化<span class="math inline">\(\mathrm{J}(\boldsymbol{\theta})\)</span>是一个最优化问题，可以采用梯度下降算法或牛顿法求解。</p><h3 id="最小二乘法">最小二乘法</h3><p>首先考虑<span class="math inline">\(x\)</span>只有一个属性，可以试图让均方误差最小化，即 <span class="math display">\[\begin{align}(w^*, b^*) &amp; =  \arg\min_{(w, b)}\sum_{i=1}^{m}(f(x_i) - y_i)^2  \\                   &amp; = \arg\min_{(w,b)}\sum_{i=1}^m(y_I - wx_i -b)^2\end{align}\]</span> 基于均方误差最小化来进行模型求解的的方法称为“最小二乘法”（least square method). 在线性回归中，最小二乘法就是找到一条直线，使得所有样本到直线上的欧式距离之和最小。</p><p>求解<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>使<span class="math inline">\(E_{(w,b)}=\sum_{i=1}^m(y_i-wx_i-b)^2\)</span>最小化的过程，称为线性回归模型的最小二乘“参数估计“(parameter estimation). 将<span class="math inline">\(E_{(w,b)}\)</span>分别对<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>求导，得到 <span class="math display">\[\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2 - \sum_{i=1}^m (y_i - b)x_i)\]</span></p><p><span class="math display">\[\frac{\partial E_{(w,b)}}{\partial b} = 2(mb - \sum_{i=1}^m(y_i-wx_i))\]</span></p><p>令是（6）和式（7）分别等于0，可得到<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>的最优解的闭式解 <span class="math display">\[w=\frac{\sum_{i=1}^m y_i(x_i - \bar{x})}{\sum_{i=1}^mx_i^2 - \frac{1}{m}(\sum_{i=1}^mx_i)^2}\]</span></p><p><span class="math display">\[b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)\]</span></p><p>当<span class="math inline">\(\boldsymbol{x}\)</span>由<span class="math inline">\(d\)</span>个属性描述时，把数据集<span class="math inline">\(D\)</span>表示为一个<span class="math inline">\(m \times (d + 1)\)</span>大小的矩阵<span class="math inline">\(\mathrm{X}\)</span>，每一行的前<span class="math inline">\(d\)</span>个属性对应于样本的<span class="math inline">\(d\)</span>个属性值，最后一个元素恒置为1，即 <span class="math display">\[\mathrm{X} =   \left[ \begin{matrix}             x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d} &amp; 1 \\                      x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} &amp; 1 \\                      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\                      x_{m1} &amp; x_{m2} &amp; \cdots &amp; x_{md} &amp; 1            \end{matrix} \right]        =   \left[ \begin{matrix}             \boldsymbol{x}_1^T &amp; 1 \\                      \boldsymbol{x}_2^T  &amp; 1 \\                      \vdots &amp; \vdots \\                      \boldsymbol{x}_m^T  &amp; 1            \end{matrix} \right]\]</span> 将标记写为向量形式<span class="math inline">\(\boldsymbol{y}=(y_1, y_2, \cdots, y_m)\)</span>， 则有 <span class="math display">\[\boldsymbol{\theta}^* = \arg\min_{\boldsymbol{\theta}}(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})\]</span> 令<span class="math inline">\(E_{\boldsymbol{\theta}}=(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})\)</span>，对<span class="math inline">\(\boldsymbol{\theta}\)</span>求导得到 <span class="math display">\[\frac{\partial{E_{\boldsymbol{\theta}}}}{\partial{\boldsymbol{\theta}}}=2 \mathrm{X}^T(\mathrm{X}\boldsymbol{\theta}-\boldsymbol{y})\]</span> 令上式等于零，即可求得<span class="math inline">\(\boldsymbol{\theta}\)</span>的最优解的闭式解。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;线性回归&quot;&gt;线性回归&lt;/h1&gt;
-&lt;h2 id=&quot;基本线性模型&quot;&gt;基本线性模型&lt;/h2&gt;
-&lt;p&gt;给定有&lt;span class=&quot;math inline&quot;&gt;\(d\)&lt;/span&gt;个属性描述的实例&lt;span class=&quot;math inline&quot;&gt;\(\boldsym
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="https://mejhwu.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

@@ -108,18 +108,15 @@
 
 
 
-  <meta name="description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
-<meta name="keywords" content="机器学习">
+  <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络">
-<meta property="og:url" content="https://mejhwu.github.io/2018/06/27/神经网络/index.html">
+<meta property="og:title" content="工厂模式">
+<meta property="og:url" content="https://mejhwu.github.io/2018/09/09/设计模式/工厂模式/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T03:56:14.926Z">
+<meta property="og:updated_time" content="2018-09-09T03:01:01.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神经网络">
-<meta name="twitter:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+<meta name="twitter:title" content="工厂模式">
 
 
 
@@ -128,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/06/27/神经网络/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2018/09/09/设计模式/工厂模式/"/>
 
 
 
@@ -138,7 +135,7 @@
   };
 </script>
 
-  <title>神经网络 | 个人博客</title>
+  <title>工厂模式 | 个人博客</title>
   
 
 
@@ -291,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/神经网络/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/09/设计模式/工厂模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -308,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">神经网络
+          <h1 class="post-title" itemprop="name headline">工厂模式
               
             
           </h1>
@@ -333,24 +330,12 @@
                 
               
 
-              <time title="Created: 2018-06-27 20:41:46" itemprop="dateCreated datePublished" datetime="2018-06-27T20:41:46+08:00">2018-06-27</time>
+              <time title="Created: 2018-09-09 00:00:00 / Modified: 11:01:01" itemprop="dateCreated datePublished" datetime="2018-09-09T00:00:00+08:00">2018-09-09</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-06-28 11:56:14" itemprop="dateModified" datetime="2018-06-28T11:56:14+08:00">2018-06-28</time>
               
             
           </span>
@@ -383,13 +368,7 @@
       
 
       
-        <h1 id="神经网络">神经网络</h1>
-<h2 id="神经元模型">神经元模型</h2>
-<p>神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。</p>
-<p>神经元模型中，神经元接受<span class="math inline">\(n\)</span>个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。</p>
-<p>常用的激活函数为<span class="math inline">\(sigmoid(x)\)</span>函数。</p>
-<p><span class="math display">\[sigmoid(x)=\frac{1}{1+e^{-x}}\]</span></p>
-<h2 id="感知机与多层网络">感知机与多层网络</h2>
+        
 
       
     </div>
@@ -410,7 +389,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
         </div>
       
@@ -423,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/决策树/" rel="next" title="决策树">
-                <i class="fa fa-chevron-left"></i> 决策树
+              <a href="/2018/09/05/EM算法/" rel="next" title="EM算法">
+                <i class="fa fa-chevron-left"></i> EM算法
               </a>
             
           </div>
@@ -432,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/java8新特性/" rel="prev" title="Java 8 新特性">
-                Java 8 新特性 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -484,17 +459,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,22 +546,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经元模型"><span class="nav-number">1.1.</span> <span class="nav-text">神经元模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机与多层网络"><span class="nav-number">1.2.</span> <span class="nav-text">感知机与多层网络</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

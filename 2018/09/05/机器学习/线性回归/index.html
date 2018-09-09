@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+  <meta name="description" content="线性回归 基本线性模型 给定有\(d\)个属性描述的实例\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)，其中\(x_i\)是\(\boldsymbol{x}\)在第\(i\)个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 \[ f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络">
-<meta property="og:url" content="https://mejhwu.github.io/2018/06/27/神经网络/index.html">
+<meta property="og:title" content="线性回归">
+<meta property="og:url" content="https://mejhwu.github.io/2018/09/05/机器学习/线性回归/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+<meta property="og:description" content="线性回归 基本线性模型 给定有\(d\)个属性描述的实例\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)，其中\(x_i\)是\(\boldsymbol{x}\)在第\(i\)个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 \[ f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T03:56:14.926Z">
+<meta property="og:updated_time" content="2018-09-06T15:12:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神经网络">
-<meta name="twitter:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+<meta name="twitter:title" content="线性回归">
+<meta name="twitter:description" content="线性回归 基本线性模型 给定有\(d\)个属性描述的实例\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)，其中\(x_i\)是\(\boldsymbol{x}\)在第\(i\)个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 \[ f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/06/27/神经网络/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2018/09/05/机器学习/线性回归/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>神经网络 | 个人博客</title>
+  <title>线性回归 | 个人博客</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/神经网络/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/05/机器学习/线性回归/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">神经网络
+          <h1 class="post-title" itemprop="name headline">线性回归
               
             
           </h1>
@@ -333,7 +333,7 @@
                 
               
 
-              <time title="Created: 2018-06-27 20:41:46" itemprop="dateCreated datePublished" datetime="2018-06-27T20:41:46+08:00">2018-06-27</time>
+              <time title="Created: 2018-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
             
 
             
@@ -350,7 +350,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-06-28 11:56:14" itemprop="dateModified" datetime="2018-06-28T11:56:14+08:00">2018-06-28</time>
+                <time title="Modified: 2018-09-06 23:12:37" itemprop="dateModified" datetime="2018-09-06T23:12:37+08:00">2018-09-06</time>
               
             
           </span>
@@ -383,13 +383,59 @@
       
 
       
-        <h1 id="神经网络">神经网络</h1>
-<h2 id="神经元模型">神经元模型</h2>
-<p>神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。</p>
-<p>神经元模型中，神经元接受<span class="math inline">\(n\)</span>个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。</p>
-<p>常用的激活函数为<span class="math inline">\(sigmoid(x)\)</span>函数。</p>
-<p><span class="math display">\[sigmoid(x)=\frac{1}{1+e^{-x}}\]</span></p>
-<h2 id="感知机与多层网络">感知机与多层网络</h2>
+        <h1 id="线性回归">线性回归</h1>
+<h2 id="基本线性模型">基本线性模型</h2>
+<p>给定有<span class="math inline">\(d\)</span>个属性描述的实例<span class="math inline">\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)</span>，其中<span class="math inline">\(x_i\)</span>是<span class="math inline">\(\boldsymbol{x}\)</span>在第<span class="math inline">\(i\)</span>个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 <span class="math display">\[
+f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\cdot\cdot + w_dx_d + b
+\]</span> 一般用向量形式写成 <span class="math display">\[
+f(\boldsymbol{x})=\boldsymbol{w}^T \boldsymbol{x} + b
+\]</span> 其中<span class="math inline">\(\boldsymbol{w}=(w_1; w_2; ...; w_d)\)</span>. <span class="math inline">\(\boldsymbol{w}\)</span>和<span class="math inline">\(b\)</span>学得之后，模型就可以确定。</p>
+<h2 id="线性回归-1">线性回归</h2>
+<p>给定数据集<span class="math inline">\(D=\{(\boldsymbol{x_1}, y_1), (\boldsymbol{x_2}, y_2), \cdots, (\boldsymbol{x_m}, y_m),\}\)</span>，其中<span class="math inline">\(\boldsymbol{x_i}=(x_{i1}, x_{i2}, \cdots, x_{id}), y_i \in \mathbb{R}\)</span>. “线性回归”试图学的一个线性模型尽可能准确的预测实值输出标记。</p>
+<p>对于离散值，若属性之间存在“序”关系，可通过连续化将其转化为连续值，如三属性值“高度”的取值为“高” “中” “矮”,可转化为{1.0, .0.5, 0.0}；若属性值之间不存在序关系，假定有<span class="math inline">\(k\)</span>个属性值，则通常转化为<span class="math inline">\(k\)</span>为向量。</p>
+<p>线性回归试图学得<span class="math inline">\(f(x_i) = \boldsymbol{w^T} \boldsymbol{x}_i + b\)</span>，使得<span class="math inline">\(f(\boldsymbol{x}_i) \simeq y_i\)</span>。</p>
+<p>回归问题中常用的损失函数（性能度量）是均方误差，令<span class="math inline">\(\boldsymbol{\theta}=(\boldsymbol{w}, b)\)</span>, 则均方误差可表示为： <span class="math display">\[
+\mathrm{J(\boldsymbol{\theta})}=\frac{1}{2}\sum_{i=1}^{m}(f(\boldsymbol{x}_i) - y_i)^2
+\]</span></p>
+<h3 id="梯度下降">梯度下降</h3>
+<p>最小化<span class="math inline">\(\mathrm{J}(\boldsymbol{\theta})\)</span>是一个最优化问题，可以采用梯度下降算法或牛顿法求解。</p>
+<h3 id="最小二乘法">最小二乘法</h3>
+<p>首先考虑<span class="math inline">\(x\)</span>只有一个属性，可以试图让均方误差最小化，即 <span class="math display">\[
+\begin{align}
+(w^*, b^*) &amp; =  \arg\min_{(w, b)}\sum_{i=1}^{m}(f(x_i) - y_i)^2  \\
+                   &amp; = \arg\min_{(w,b)}\sum_{i=1}^m(y_I - wx_i -b)^2
+\end{align}
+\]</span> 基于均方误差最小化来进行模型求解的的方法称为“最小二乘法”（least square method). 在线性回归中，最小二乘法就是找到一条直线，使得所有样本到直线上的欧式距离之和最小。</p>
+<p>求解<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>使<span class="math inline">\(E_{(w,b)}=\sum_{i=1}^m(y_i-wx_i-b)^2\)</span>最小化的过程，称为线性回归模型的最小二乘“参数估计“(parameter estimation). 将<span class="math inline">\(E_{(w,b)}\)</span>分别对<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>求导，得到 <span class="math display">\[
+\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2 - \sum_{i=1}^m (y_i - b)x_i)
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial E_{(w,b)}}{\partial b} = 2(mb - \sum_{i=1}^m(y_i-wx_i))
+\]</span></p>
+<p>令是（6）和式（7）分别等于0，可得到<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>的最优解的闭式解 <span class="math display">\[
+w=\frac{\sum_{i=1}^m y_i(x_i - \bar{x})}{\sum_{i=1}^mx_i^2 - \frac{1}{m}(\sum_{i=1}^mx_i)^2}
+\]</span></p>
+<p><span class="math display">\[
+b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
+\]</span></p>
+<p>当<span class="math inline">\(\boldsymbol{x}\)</span>由<span class="math inline">\(d\)</span>个属性描述时，把数据集<span class="math inline">\(D\)</span>表示为一个<span class="math inline">\(m \times (d + 1)\)</span>大小的矩阵<span class="math inline">\(\mathrm{X}\)</span>，每一行的前<span class="math inline">\(d\)</span>个属性对应于样本的<span class="math inline">\(d\)</span>个属性值，最后一个元素恒置为1，即 <span class="math display">\[
+\mathrm{X} =   \left[ \begin{matrix} 
+            x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d} &amp; 1 \\
+                      x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} &amp; 1 \\
+                      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+                      x_{m1} &amp; x_{m2} &amp; \cdots &amp; x_{md} &amp; 1
+            \end{matrix} \right]
+        =   \left[ \begin{matrix} 
+            \boldsymbol{x}_1^T &amp; 1 \\
+                      \boldsymbol{x}_2^T  &amp; 1 \\
+                      \vdots &amp; \vdots \\
+                      \boldsymbol{x}_m^T  &amp; 1
+            \end{matrix} \right]
+\]</span> 将标记写为向量形式<span class="math inline">\(\boldsymbol{y}=(y_1, y_2, \cdots, y_m)\)</span>， 则有 <span class="math display">\[
+\boldsymbol{\theta}^* = \arg\min_{\boldsymbol{\theta}}(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})
+\]</span> 令<span class="math inline">\(E_{\boldsymbol{\theta}}=(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})\)</span>，对<span class="math inline">\(\boldsymbol{\theta}\)</span>求导得到 <span class="math display">\[
+\frac{\partial{E_{\boldsymbol{\theta}}}}{\partial{\boldsymbol{\theta}}}=2 \mathrm{X}^T(\mathrm{X}\boldsymbol{\theta}-\boldsymbol{y})
+\]</span> 令上式等于零，即可求得<span class="math inline">\(\boldsymbol{\theta}\)</span>的最优解的闭式解。</p>
 
       
     </div>
@@ -423,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/决策树/" rel="next" title="决策树">
-                <i class="fa fa-chevron-left"></i> 决策树
+              <a href="/2018/09/05/Java/java8新特性/" rel="next" title="Java 8 新特性">
+                <i class="fa fa-chevron-left"></i> Java 8 新特性
               </a>
             
           </div>
@@ -433,8 +479,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/05/java8新特性/" rel="prev" title="Java 8 新特性">
-                Java 8 新特性 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/05/机器学习/EM算法/" rel="prev" title="EM算法">
+                EM算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -530,7 +576,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -547,7 +595,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -590,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经元模型"><span class="nav-number">1.1.</span> <span class="nav-text">神经元模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机与多层网络"><span class="nav-number">1.2.</span> <span class="nav-text">感知机与多层网络</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本线性模型"><span class="nav-number">1.1.</span> <span class="nav-text">基本线性模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归-1"><span class="nav-number">1.2.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.2.1.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法"><span class="nav-number">1.2.2.</span> <span class="nav-text">最小二乘法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

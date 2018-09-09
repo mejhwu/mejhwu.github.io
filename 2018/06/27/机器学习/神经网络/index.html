@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 \[J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2\] 其中\(h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \the">
+  <meta name="description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯度下降">
-<meta property="og:url" content="https://mejhwu.github.io/2018/04/24/梯度下降/index.html">
+<meta property="og:title" content="神经网络">
+<meta property="og:url" content="https://mejhwu.github.io/2018/06/27/机器学习/神经网络/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 \[J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2\] 其中\(h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \the">
+<meta property="og:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T12:57:51.014Z">
+<meta property="og:updated_time" content="2018-06-28T03:56:14.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梯度下降">
-<meta name="twitter:description" content="梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值). 批量梯度下降 假设有损失函数 \[J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2\] 其中\(h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \the">
+<meta name="twitter:title" content="神经网络">
+<meta name="twitter:description" content="神经网络 神经元模型 神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。 神经元模型中，神经元接受\(n\)个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。 常用的激活函数为\(sigmoid(x)\)函数。 \[sigmoi">
 
 
 
@@ -127,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/04/24/梯度下降/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2018/06/27/机器学习/神经网络/"/>
 
 
 
@@ -137,7 +138,7 @@
   };
 </script>
 
-  <title>梯度下降 | 个人博客</title>
+  <title>神经网络 | 个人博客</title>
   
 
 
@@ -290,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/04/24/梯度下降/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/27/机器学习/神经网络/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -307,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">梯度下降
+          <h1 class="post-title" itemprop="name headline">神经网络
               
             
           </h1>
@@ -332,7 +333,7 @@
                 
               
 
-              <time title="Created: 2018-04-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-24T00:00:00+08:00">2018-04-24</time>
+              <time title="Created: 2018-06-27 20:41:46" itemprop="dateCreated datePublished" datetime="2018-06-27T20:41:46+08:00">2018-06-27</time>
             
 
             
@@ -349,29 +350,11 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-06-27 20:57:51" itemprop="dateModified" datetime="2018-06-27T20:57:51+08:00">2018-06-27</time>
+                <time title="Modified: 2018-06-28 11:56:14" itemprop="dateModified" datetime="2018-06-28T11:56:14+08:00">2018-06-28</time>
               
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -400,21 +383,13 @@
       
 
       
-        <p>梯度下降就是在函数当前点梯度(偏导)的反方向的规定步长进行迭代,直至收敛(即到达局部最小值).</p>
-<p>批量梯度下降</p>
-<p>假设有损失函数</p>
-<p><span class="math display">\[J(\theta)=\frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2\]</span></p>
-<p>其中<span class="math inline">\(h_\theta(x)=\theta_0 + \theta_1x_1 + \theta_2x_2 + \cdots + \theta_nx_n\)</span>.</p>
-<p>那么</p>
-<p><span class="math display">\[\theta_j:=\theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)\]</span></p>
-<p><span class="math display">\[\begin{aligned} \frac{\partial}{\partial \theta_j}J(\theta) = \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} \end{aligned}\]</span></p>
-<p>所以</p>
-<p><span class="math display">\[\theta_j:=\theta_j + \sum_{i=1}^{m}( y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}\]</span></p>
-<p>以上公示就是批量梯度下降,每一次迭代<span class="math inline">\(\theta_j\)</span>时,都需要完全遍历整个输入集合.</p>
-<p>随机梯度下降</p>
-<p>假设只有一个输入样本,则</p>
-<p><span class="math display">\[\theta_j:=\theta_j + ( y - h_\theta(x)x_j\]</span></p>
-<p>以上就是随机梯度下降的公式.即每次更新<span class="math inline">\(\theta_j\)</span>只用一个样本.</p>
+        <h1 id="神经网络">神经网络</h1>
+<h2 id="神经元模型">神经元模型</h2>
+<p>神经网络中最基本的单元是神经元，类似与生物神经网络中的神经元，当某个神经元的的点位超过某个“阈值”时，那么它被激活并像其他神经元发送信号。</p>
+<p>神经元模型中，神经元接受<span class="math inline">\(n\)</span>个其他神经元传递来的信号，这些信号通过带权重的连接进行传递，神经元接受到的总输入值与阈值进行比较，然后通过激活函数处理产生神经元输出。</p>
+<p>常用的激活函数为<span class="math inline">\(sigmoid(x)\)</span>函数。</p>
+<p><span class="math display">\[sigmoid(x)=\frac{1}{1+e^{-x}}\]</span></p>
+<h2 id="感知机与多层网络">感知机与多层网络</h2>
 
       
     </div>
@@ -433,6 +408,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
 
       
       
@@ -442,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/22/数理统计总结/" rel="next" title="数理统计的基本概念">
-                <i class="fa fa-chevron-left"></i> 数理统计的基本概念
+              <a href="/2018/06/27/机器学习/决策树/" rel="next" title="决策树">
+                <i class="fa fa-chevron-left"></i> 决策树
               </a>
             
           </div>
@@ -452,8 +433,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/12/数学基础/" rel="prev" title="数学基础">
-                数学基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/05/Java/java8新特性/" rel="prev" title="Java 8 新特性">
+                Java 8 新特性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -503,8 +484,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -540,7 +530,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -557,7 +549,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -590,6 +582,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">1.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经元模型"><span class="nav-number">1.1.</span> <span class="nav-text">神经元模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机与多层网络"><span class="nav-number">1.2.</span> <span class="nav-text">感知机与多层网络</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

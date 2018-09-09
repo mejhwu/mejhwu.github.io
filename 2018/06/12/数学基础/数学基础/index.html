@@ -108,18 +108,17 @@
 
 
 
-  <meta name="description" content="线性回归 基本线性模型 给定有\(d\)个属性描述的实例\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)，其中\(x_i\)是\(\boldsymbol{x}\)在第\(i\)个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 \[ f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="泰勒展开式 \[ f(x) = f(a) + \frac{f^{&amp;#39;}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^n + R_n(x) \] 在一般工程应用中，只取泰勒展开式的前三项。 分布积分法 \[ \begin{gather} (u \cdot v)^{&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性回归">
-<meta property="og:url" content="https://mejhwu.github.io/2018/09/05/线性回归/index.html">
+<meta property="og:title" content="数学基础">
+<meta property="og:url" content="https://mejhwu.github.io/2018/06/12/数学基础/数学基础/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="线性回归 基本线性模型 给定有\(d\)个属性描述的实例\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)，其中\(x_i\)是\(\boldsymbol{x}\)在第\(i\)个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 \[ f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\">
+<meta property="og:description" content="泰勒展开式 \[ f(x) = f(a) + \frac{f^{&amp;#39;}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^n + R_n(x) \] 在一般工程应用中，只取泰勒展开式的前三项。 分布积分法 \[ \begin{gather} (u \cdot v)^{&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-06T15:12:37.146Z">
+<meta property="og:updated_time" content="2018-09-06T14:02:54.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性回归">
-<meta name="twitter:description" content="线性回归 基本线性模型 给定有\(d\)个属性描述的实例\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)，其中\(x_i\)是\(\boldsymbol{x}\)在第\(i\)个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 \[ f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\">
+<meta name="twitter:title" content="数学基础">
+<meta name="twitter:description" content="泰勒展开式 \[ f(x) = f(a) + \frac{f^{&amp;#39;}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^n + R_n(x) \] 在一般工程应用中，只取泰勒展开式的前三项。 分布积分法 \[ \begin{gather} (u \cdot v)^{&amp;">
 
 
 
@@ -128,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/09/05/线性回归/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2018/06/12/数学基础/数学基础/"/>
 
 
 
@@ -138,7 +137,7 @@
   };
 </script>
 
-  <title>线性回归 | 个人博客</title>
+  <title>数学基础 | 个人博客</title>
   
 
 
@@ -291,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/05/线性回归/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/06/12/数学基础/数学基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -308,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线性回归
+          <h1 class="post-title" itemprop="name headline">数学基础
               
             
           </h1>
@@ -333,7 +332,7 @@
                 
               
 
-              <time title="Created: 2018-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
+              <time title="Created: 2018-06-12 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-12T00:00:00+08:00">2018-06-12</time>
             
 
             
@@ -350,11 +349,29 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-06 23:12:37" itemprop="dateModified" datetime="2018-09-06T23:12:37+08:00">2018-09-06</time>
+                <time title="Modified: 2018-09-06 22:02:54" itemprop="dateModified" datetime="2018-09-06T22:02:54+08:00">2018-09-06</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -383,59 +400,94 @@
       
 
       
-        <h1 id="线性回归">线性回归</h1>
-<h2 id="基本线性模型">基本线性模型</h2>
-<p>给定有<span class="math inline">\(d\)</span>个属性描述的实例<span class="math inline">\(\boldsymbol{x}=(x_1; x_2; ...; x_d)\)</span>，其中<span class="math inline">\(x_i\)</span>是<span class="math inline">\(\boldsymbol{x}\)</span>在第<span class="math inline">\(i\)</span>个属性上的取值，线性模型（linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 <span class="math display">\[
-f(\boldsymbol{x})=w_1x_1 + w_2x_2 + \cdot\cdot\cdot + w_dx_d + b
-\]</span> 一般用向量形式写成 <span class="math display">\[
-f(\boldsymbol{x})=\boldsymbol{w}^T \boldsymbol{x} + b
-\]</span> 其中<span class="math inline">\(\boldsymbol{w}=(w_1; w_2; ...; w_d)\)</span>. <span class="math inline">\(\boldsymbol{w}\)</span>和<span class="math inline">\(b\)</span>学得之后，模型就可以确定。</p>
-<h2 id="线性回归-1">线性回归</h2>
-<p>给定数据集<span class="math inline">\(D=\{(\boldsymbol{x_1}, y_1), (\boldsymbol{x_2}, y_2), \cdots, (\boldsymbol{x_m}, y_m),\}\)</span>，其中<span class="math inline">\(\boldsymbol{x_i}=(x_{i1}, x_{i2}, \cdots, x_{id}), y_i \in \mathbb{R}\)</span>. “线性回归”试图学的一个线性模型尽可能准确的预测实值输出标记。</p>
-<p>对于离散值，若属性之间存在“序”关系，可通过连续化将其转化为连续值，如三属性值“高度”的取值为“高” “中” “矮”,可转化为{1.0, .0.5, 0.0}；若属性值之间不存在序关系，假定有<span class="math inline">\(k\)</span>个属性值，则通常转化为<span class="math inline">\(k\)</span>为向量。</p>
-<p>线性回归试图学得<span class="math inline">\(f(x_i) = \boldsymbol{w^T} \boldsymbol{x}_i + b\)</span>，使得<span class="math inline">\(f(\boldsymbol{x}_i) \simeq y_i\)</span>。</p>
-<p>回归问题中常用的损失函数（性能度量）是均方误差，令<span class="math inline">\(\boldsymbol{\theta}=(\boldsymbol{w}, b)\)</span>, 则均方误差可表示为： <span class="math display">\[
-\mathrm{J(\boldsymbol{\theta})}=\frac{1}{2}\sum_{i=1}^{m}(f(\boldsymbol{x}_i) - y_i)^2
+        <h4 id="泰勒展开式">泰勒展开式</h4>
+<p><span class="math display">\[
+f(x) = f(a) + \frac{f^{&#39;}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^n + R_n(x)
+\]</span> 在一般工程应用中，只取泰勒展开式的前三项。</p>
+<p>分布积分法 <span class="math display">\[
+\begin{gather}
+(u \cdot v)^{&#39;} = u^{&#39;}v + uv^{&#39;} \\
+\int u \cdot dv = u \cdot v - \int v \cdot du
+\end{gather}
 \]</span></p>
-<h3 id="梯度下降">梯度下降</h3>
-<p>最小化<span class="math inline">\(\mathrm{J}(\boldsymbol{\theta})\)</span>是一个最优化问题，可以采用梯度下降算法或牛顿法求解。</p>
-<h3 id="最小二乘法">最小二乘法</h3>
-<p>首先考虑<span class="math inline">\(x\)</span>只有一个属性，可以试图让均方误差最小化，即 <span class="math display">\[
-\begin{align}
-(w^*, b^*) &amp; =  \arg\min_{(w, b)}\sum_{i=1}^{m}(f(x_i) - y_i)^2  \\
-                   &amp; = \arg\min_{(w,b)}\sum_{i=1}^m(y_I - wx_i -b)^2
-\end{align}
-\]</span> 基于均方误差最小化来进行模型求解的的方法称为“最小二乘法”（least square method). 在线性回归中，最小二乘法就是找到一条直线，使得所有样本到直线上的欧式距离之和最小。</p>
-<p>求解<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>使<span class="math inline">\(E_{(w,b)}=\sum_{i=1}^m(y_i-wx_i-b)^2\)</span>最小化的过程，称为线性回归模型的最小二乘“参数估计“(parameter estimation). 将<span class="math inline">\(E_{(w,b)}\)</span>分别对<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>求导，得到 <span class="math display">\[
-\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2 - \sum_{i=1}^m (y_i - b)x_i)
+<h4 id="梯度">梯度</h4>
+<p>函数<span class="math inline">\(z=f(x,y)\)</span>，则方向L的方向导数： <span class="math display">\[
+\frac{\partial f}{\partial l} = \frac{\partial f}{\partial x} cos \varphi + \frac{\partial f}{\partial y} sin \varphi
+\]</span></p>
+<p><span class="math inline">\(\varphi\)</span>为<span class="math inline">\(x\)</span>轴到方向L的转向。</p>
+<p>函数<span class="math inline">\(z=f(x,y)\)</span>，则向量<span class="math inline">\((\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y})\)</span>记为<span class="math inline">\(z\)</span>的梯度，记作<span class="math inline">\(grand f(x,y)\)</span>。</p>
+<p>梯度的方向是函数在该点变化最快的方向。</p>
+<h4 id="jensen不等式">Jensen不等式</h4>
+<p><span class="math display">\[
+f(\theta x + (1 - \theta) y)  \le \theta f(x) + (1-\theta) f(y)
+\]</span> 若<span class="math inline">\(\theta_1,\theta_2,\cdots, \theta_n \ge 0; \theta_1 + \theta_2 + \cdot \cdot \cdot + \theta_n = 1\)</span>， 则 <span class="math display">\[
+f(\theta_1 x_1 + \theta_2 x_2 + \cdots + \theta_n x_n ) \le \theta_1 f(x_1) + \theta_2 f(x_2) + \cdots + \theta_n f(x_n)
+\]</span> 若<span class="math inline">\(f^{&#39;&#39;}(x) \ge 0\)</span>，则<span class="math inline">\(f(E[x]) \le E[f(x)]\)</span>。</p>
+<h4 id="gini系数">Gini系数</h4>
+<p><span class="math display">\[
+H(x) \approx \sum_{k=1}^{n} p_k (1-P_k)
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial E_{(w,b)}}{\partial b} = 2(mb - \sum_{i=1}^m(y_i-wx_i))
+H(x) = -\sum_{k=1}^n p_k lnp_k
 \]</span></p>
-<p>令是（6）和式（7）分别等于0，可得到<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>的最优解的闭式解 <span class="math display">\[
-w=\frac{\sum_{i=1}^m y_i(x_i - \bar{x})}{\sum_{i=1}^mx_i^2 - \frac{1}{m}(\sum_{i=1}^mx_i)^2}
+<h4 id="hessian矩阵">Hessian矩阵</h4>
+<p><strong>海森矩阵</strong>（Hessian matrix 或 Hessian）是一个多变量实值函数的二阶偏导数组成的方块矩阵，假设有一实值函数<span class="math inline">\(f(x_1,x_2,\cdot \cdot \cdot, x_n)\)</span>，如果<span class="math inline">\(f\)</span>所有的二阶倒数都存在，那么<span class="math inline">\(f\)</span>的Hessian矩阵的<span class="math inline">\(ij\)</span>项为： <span class="math display">\[
+H(f)_{ij} = D_i D_j f(x)
+\]</span> 其中<span class="math inline">\(x=(x_1,x_2,\cdot \cdot \cdot, x_n)\)</span>，即 <span class="math display">\[
+H(f) =\left[ 
+    \begin{matrix}
+    \frac{\partial ^2 f}{\partial x_1 ^2} &amp; \frac{\partial ^2 f}{\partial x_1 \partial x_2} &amp; \cdots &amp; \frac{\partial ^2 f}{\partial x_1 \partial x_n} \\
+    \frac{\partial ^2 f}{\partial x_2  \partial x_1} &amp; \frac{\partial ^2 f}{partial x_2 ^2} &amp; \cdots &amp; \frac{\partial ^2 f}{\partial x_2 \partial x_n} \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    \frac{\partial ^2 f}{\partial x_m  \partial x_1} &amp; \frac{\partial ^2 f}{\partial x_m \partial x_2} &amp; \cdots &amp; \frac{\partial ^2 f}{\partial x_n ^2} \\
+    \end{matrix}
+    \right]
+\]</span></p>
+<h4 id="正定矩阵">正定矩阵</h4>
+<p>一个<em>n</em>×<em>n</em>的实对称矩阵是<strong>正定</strong>的，当且仅当对于所有的非零实系数<span class="math inline">\(z\)</span>，都有<span class="math inline">\(z^TMz &gt; 0\)</span>。其中<span class="math inline">\(z^T\)</span>表示<span class="math inline">\(z\)</span>的转置。当矩阵<span class="math inline">\(M\)</span>的所有特征值<span class="math inline">\(\lambda_i\)</span>大于0时，矩阵<span class="math inline">\(M\)</span>是正定的，反之亦然。</p>
+<h4 id="牛顿法">牛顿法</h4>
+<p>牛顿法用于求解零点，其迭代公式为： <span class="math display">\[
+x_{n+1} = x_n - \frac{f(x_n)}{f^{&#39;}(x_n)}
+\]</span> 牛顿法也被用于求函数的极值。由于函数取极值的点处的导数值为零，故可用牛顿法求导函数的零点，其迭代式为： <span class="math display">\[
+x_{n+1} = x_n - \frac{f^{&#39;}(x_n)}{f^{&#39;&#39;}(x_n)}
+\]</span></p>
+<h4 id="大数定理">大数定理</h4>
+<p><span class="math display">\[
+\lim_{n \to \infty } P\{ |Y_n - \mu| &lt; \varepsilon \} = 1
+\]</span></p>
+<h4 id="中心极限定理">中心极限定理</h4>
+<p><span class="math display">\[
+Y_n = \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n} \sigma}
+\]</span></p>
+<p>分布收敛于正态分布，<span class="math inline">\(\sum_{i=1}^nX_i\)</span>收敛到正态分布<span class="math inline">\(N(n\mu, n\sigma ^2)\)</span>。</p>
+<h4 id="矩阵基础">矩阵基础</h4>
+<p>矩阵正定：特征值大于0；</p>
+<p>矩阵半正定：特征值大于等于0；</p>
+<p><span class="math inline">\(n\)</span>元线性方程组<span class="math inline">\(Ax=b\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>无解的充要条件：<span class="math inline">\(R(A) &lt; R(A, b)\)</span>.</li>
+<li>有唯一解的充要条件：<span class="math inline">\(R(A) =R(A, b) = n\)</span>.</li>
+<li>有无限多解的充要条件：<span class="math inline">\(R(A) = R(A, b) &lt; n\)</span>.</li>
+</ol>
+<p>正交阵：<span class="math inline">\(AA^T=I\)</span>.</p>
+<p><span class="math inline">\(A\)</span>是正交阵，<span class="math inline">\(x\)</span>为向量，<span class="math inline">\(Ax\)</span>称为正交变换。</p>
+<h4 id="特征值与特征向量">特征值与特征向量</h4>
+<p><span class="math inline">\(A\)</span>是<span class="math inline">\(n\)</span>阶矩阵，数<span class="math inline">\(\lambda\)</span>和<span class="math inline">\(n\)</span>维非0向量<span class="math inline">\(x\)</span>满足<span class="math inline">\(Ax=\lambda x\)</span>，则数<span class="math inline">\(\lambda\)</span>称为<span class="math inline">\(A\)</span>的特征值，<span class="math inline">\(x\)</span>称为<span class="math inline">\(A\)</span>的对应于特征值<span class="math inline">\(\lambda\)</span>的特征向量。</p>
+<p><span class="math inline">\((A-\lambda I) x = 0\)</span>，令<span class="math inline">\(|A-\lambda x| = 0\)</span>， 则方程<span class="math inline">\(|A-\lambda x| = 0\)</span>的根为<span class="math inline">\(A\)</span>的特征值。将根<span class="math inline">\(\lambda _0\)</span>带入方程组<span class="math inline">\((A-\lambda I) x = 0\)</span>，求得的非零解即为<span class="math inline">\(\lambda _0\)</span>对应的特征向量。 <span class="math display">\[
+\lambda _1 + \lambda _2 + \cdots + \lambda _n = a_{11} + a_{22} + \cdots + a_{nn}
 \]</span></p>
 <p><span class="math display">\[
-b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
+\lambda _1 \cdot \lambda _2 \cdot \cdots \lambda _n = |A|
 \]</span></p>
-<p>当<span class="math inline">\(\boldsymbol{x}\)</span>由<span class="math inline">\(d\)</span>个属性描述时，把数据集<span class="math inline">\(D\)</span>表示为一个<span class="math inline">\(m \times (d + 1)\)</span>大小的矩阵<span class="math inline">\(\mathrm{X}\)</span>，每一行的前<span class="math inline">\(d\)</span>个属性对应于样本的<span class="math inline">\(d\)</span>个属性值，最后一个元素恒置为1，即 <span class="math display">\[
-\mathrm{X} =   \left[ \begin{matrix} 
-            x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d} &amp; 1 \\
-                      x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} &amp; 1 \\
-                      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
-                      x_{m1} &amp; x_{m2} &amp; \cdots &amp; x_{md} &amp; 1
-            \end{matrix} \right]
-        =   \left[ \begin{matrix} 
-            \boldsymbol{x}_1^T &amp; 1 \\
-                      \boldsymbol{x}_2^T  &amp; 1 \\
-                      \vdots &amp; \vdots \\
-                      \boldsymbol{x}_m^T  &amp; 1
-            \end{matrix} \right]
-\]</span> 将标记写为向量形式<span class="math inline">\(\boldsymbol{y}=(y_1, y_2, \cdots, y_m)\)</span>， 则有 <span class="math display">\[
-\boldsymbol{\theta}^* = \arg\min_{\boldsymbol{\theta}}(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})
-\]</span> 令<span class="math inline">\(E_{\boldsymbol{\theta}}=(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})^T(\boldsymbol{y}-\mathrm{X}\boldsymbol{\theta})\)</span>，对<span class="math inline">\(\boldsymbol{\theta}\)</span>求导得到 <span class="math display">\[
-\frac{\partial{E_{\boldsymbol{\theta}}}}{\partial{\boldsymbol{\theta}}}=2 \mathrm{X}^T(\mathrm{X}\boldsymbol{\theta}-\boldsymbol{y})
-\]</span> 令上式等于零，即可求得<span class="math inline">\(\boldsymbol{\theta}\)</span>的最优解的闭式解。</p>
+<p>矩阵<span class="math inline">\(A\)</span>主行列式的元素和称作矩阵<span class="math inline">\(A\)</span>的迹。</p>
+<p><span class="math inline">\(\lambda ^2\)</span> 是<span class="math inline">\(A ^2\)</span>的特征值。</p>
+<p><span class="math inline">\(A\)</span>可逆时，<span class="math inline">\(\lambda ^{-1}\)</span>是<span class="math inline">\(A^{-1}\)</span>的特征值。</p>
+<p><span class="math inline">\(\lambda _1, \lambda _2, \cdots \lambda _m\)</span>是方阵<span class="math inline">\(A\)</span>的<span class="math inline">\(m\)</span>个特征值，<span class="math inline">\(P_1, P_2, \cdots, P_m\)</span>是特征向量；若<span class="math inline">\(\lambda _1, \lambda _2, \cdots \lambda _m\)</span>各不相等，则<span class="math inline">\(P_1, P_2, \cdots, P_m\)</span>线性无关。</p>
+<p>不同特征值对应的特征向量线性无关。</p>
+<p>实对称矩阵的特征值是实数。</p>
+<p>实对称阵的特征向量可以取实向量。</p>
+<p>实对称阵不同特征值的特征向量正交。</p>
+<p><span class="math inline">\(A\)</span>为<span class="math inline">\(n\)</span>阶对称阵，则必有正交阵<span class="math inline">\(P\)</span>使得<span class="math inline">\(P^{-1}AP=P^TAP=\Lambda\)</span>。<span class="math inline">\(\Lambda\)</span>是以<span class="math inline">\(A\)</span>的<span class="math inline">\(n\)</span>个特征值为对角元的对称阵，改变换称为合同变换，<span class="math inline">\(A\)</span>和<span class="math inline">\(\Lambda\)</span>为合同矩阵。</p>
 
       
     </div>
@@ -454,12 +506,6 @@ b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-        </div>
-      
 
       
       
@@ -469,8 +515,8 @@ b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/05/java8新特性/" rel="next" title="Java 8 新特性">
-                <i class="fa fa-chevron-left"></i> Java 8 新特性
+              <a href="/2018/04/24/机器学习/梯度下降/" rel="next" title="梯度下降">
+                <i class="fa fa-chevron-left"></i> 梯度下降
               </a>
             
           </div>
@@ -479,8 +525,8 @@ b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/05/EM算法/" rel="prev" title="EM算法">
-                EM算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/27/机器学习/决策树/" rel="prev" title="决策树">
+                决策树 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,7 +622,9 @@ b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -593,7 +641,7 @@ b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -636,7 +684,7 @@ b=\frac{1}{m}\sum_{i=1}^m(y_i - wx_i)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本线性模型"><span class="nav-number">1.1.</span> <span class="nav-text">基本线性模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归-1"><span class="nav-number">1.2.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.2.1.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法"><span class="nav-number">1.2.2.</span> <span class="nav-text">最小二乘法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#泰勒展开式"><span class="nav-number">1.</span> <span class="nav-text">泰勒展开式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度"><span class="nav-number">2.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jensen不等式"><span class="nav-number">3.</span> <span class="nav-text">Jensen不等式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gini系数"><span class="nav-number">4.</span> <span class="nav-text">Gini系数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hessian矩阵"><span class="nav-number">5.</span> <span class="nav-text">Hessian矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正定矩阵"><span class="nav-number">6.</span> <span class="nav-text">正定矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#牛顿法"><span class="nav-number">7.</span> <span class="nav-text">牛顿法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大数定理"><span class="nav-number">8.</span> <span class="nav-text">大数定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中心极限定理"><span class="nav-number">9.</span> <span class="nav-text">中心极限定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵基础"><span class="nav-number">10.</span> <span class="nav-text">矩阵基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征值与特征向量"><span class="nav-number">11.</span> <span class="nav-text">特征值与特征向量</span></a></li></ol></div>
             
 
           </div>

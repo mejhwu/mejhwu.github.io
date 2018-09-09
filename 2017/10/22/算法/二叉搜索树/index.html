@@ -108,17 +108,21 @@
 
 
 
-  <meta name="description" content="EM算法">
+  <meta name="description" content="二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。     1. 查找 从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。     2. 插入 插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EM算法">
-<meta property="og:url" content="https://mejhwu.github.io/2018/09/05/EM算法/index.html">
+<meta property="og:title" content="二叉搜索树">
+<meta property="og:url" content="https://mejhwu.github.io/2017/10/22/算法/二叉搜索树/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="EM算法">
+<meta property="og:description" content="二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。     1. 查找 从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。     2. 插入 插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T12:11:16.195Z">
+<meta property="og:image" content="https://mejhwu.github.io/2017/10/22/算法/images/binary_search_tree/binary_search_tree.png">
+<meta property="og:image" content="https://mejhwu.github.io/2017/10/22/算法/images/binary_search_tree/binary_search_tree_search.png">
+<meta property="og:image" content="https://mejhwu.github.io/2017/10/22/算法/images/binary_search_tree/binary_search_tree_insert.png">
+<meta property="og:updated_time" content="2018-09-05T14:20:08.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EM算法">
-<meta name="twitter:description" content="EM算法">
+<meta name="twitter:title" content="二叉搜索树">
+<meta name="twitter:description" content="二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。     1. 查找 从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。     2. 插入 插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。">
+<meta name="twitter:image" content="https://mejhwu.github.io/2017/10/22/算法/images/binary_search_tree/binary_search_tree.png">
 
 
 
@@ -127,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="https://mejhwu.github.io/2018/09/05/EM算法/"/>
+  <link rel="canonical" href="https://mejhwu.github.io/2017/10/22/算法/二叉搜索树/"/>
 
 
 
@@ -137,7 +141,7 @@
   };
 </script>
 
-  <title>EM算法 | 个人博客</title>
+  <title>二叉搜索树 | 个人博客</title>
   
 
 
@@ -290,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/09/05/EM算法/">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2017/10/22/算法/二叉搜索树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jhwu">
@@ -307,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">EM算法
+          <h1 class="post-title" itemprop="name headline">二叉搜索树
               
             
           </h1>
@@ -332,12 +336,24 @@
                 
               
 
-              <time title="Created: 2018-09-05 00:00:00 / Modified: 20:11:16" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">2018-09-05</time>
+              <time title="Created: 2017-10-22 00:00:00" itemprop="dateCreated datePublished" datetime="2017-10-22T00:00:00+08:00">2017-10-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-05 22:20:08" itemprop="dateModified" datetime="2018-09-05T22:20:08+08:00">2018-09-05</time>
               
             
           </span>
@@ -354,7 +370,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
 
                 
                 
@@ -388,7 +404,23 @@
       
 
       
-        <h1 id="em算法">EM算法</h1>
+        <p>二叉搜索树是一种被用于查找的二叉树。其要求是：每个节点都大于其左子树，小于或等于右子树。</p>
+<div class="figure">
+<img src="../images/binary_search_tree/binary_search_tree.png">
+
+</div>
+<h3 id="查找">1. 查找</h3>
+<p>从根节点开始查找。如果关键值等于当前节点值，说明查找成功。如果关键值小于当前节点值，则在当前节点的左子树上查找。如果关键值大于当前节点，则在当前节点的右子树上查找。</p>
+<div class="figure">
+<img src="../images/binary_search_tree/binary_search_tree_search.png">
+
+</div>
+<h3 id="插入">2. 插入</h3>
+<p>插入的节点一定是叶子节点。二叉搜索树插入前需要先进行查找，最后查找到的叶子节点即为插入节点的位置。</p>
+<div class="figure">
+<img src="../images/binary_search_tree/binary_search_tree_insert.png">
+
+</div>
 
       
     </div>
@@ -416,18 +448,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/05/线性回归/" rel="next" title="线性回归">
-                <i class="fa fa-chevron-left"></i> 线性回归
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/09/设计模式/工厂模式/" rel="prev" title="工厂模式">
-                工厂模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/19/数学基础/概率论总结/" rel="prev" title="概率论总结">
+                概率论总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -523,7 +551,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -540,7 +570,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -583,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#em算法"><span class="nav-number">1.</span> <span class="nav-text">EM算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">1.</span> <span class="nav-text">1. 查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">2.</span> <span class="nav-text">2. 插入</span></a></li></ol></div>
             
 
           </div>

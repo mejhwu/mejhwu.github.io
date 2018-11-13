@@ -71,9 +71,9 @@
     <link href="https://mejhwu.github.io/2018/10/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B0%83%E5%8F%82%E5%BB%BA%E8%AE%AE/"/>
     <id>https://mejhwu.github.io/2018/10/19/机器学习/深度学习调参建议/</id>
     <published>2018-10-18T16:00:00.000Z</published>
-    <updated>2018-11-06T15:15:56.000Z</updated>
+    <updated>2018-11-13T14:13:40.306Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="参数调优">参数调优</h1><ol style="list-style-type: decimal"><li>Grid Search v.s. Random Search</li></ol><div class="figure"><img src="/home/mejhwu/blogs/blog/source/_posts/机器学习/深度学习调参建议.assets/gridserach.png"></div><p>Assumption: top K results are good enough.</p><p>if there are N points, probability K/N that your sample is in top K Sample x times: <span class="math display">\[   1 - (1 - K /N )^x &gt; 90 \%   \]</span> If N = 1000, K = 10 ———–-&gt; x = 230</p><p>​ K = 100 ————&gt; x = 22</p><ol start="2" style="list-style-type: decimal"><li>Model-based Hyperparameter</li></ol><div class="figure"><img src="/home/mejhwu/blogs/blog/source/_posts/机器学习/深度学习调参建议.assets/mode-base%20.png"></div><ol start="3" style="list-style-type: decimal"><li>learn to learn</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="参数调优">参数调优</h1><ol style="list-style-type: decimal"><li>Grid Search v.s. Random Search</li></ol><div class="figure"><img src="D:\blogs\blog\source\images\深度学习调参建议/gridserach.png"></div><p>Assumption: top K results are good enough.</p><p>if there are N points, probability K/N that your sample is in top K Sample x times: <span class="math display">\[   1 - (1 - K /N )^x &gt; 90 \%   \]</span> If N = 1000, K = 10 ———–-&gt; x = 230</p><p>​ K = 100 ————&gt; x = 22</p><ol start="2" style="list-style-type: decimal"><li>Model-based Hyperparameter</li></ol><div class="figure"><img src="D:\blogs\blog\source\images\深度学习调参建议/mode-base%20.png"></div><ol start="3" style="list-style-type: decimal"><li>learn to learn</li></ol>]]></content>
     
     <summary type="html">
     
@@ -95,11 +95,11 @@
   </entry>
   
   <entry>
-    <title>决策树</title>
+    <title>凸优化</title>
     <link href="https://mejhwu.github.io/2018/10/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     <id>https://mejhwu.github.io/2018/10/19/机器学习/凸优化/</id>
     <published>2018-10-18T16:00:00.000Z</published>
-    <updated>2018-10-18T14:10:39.000Z</updated>
+    <updated>2018-11-13T14:12:05.561Z</updated>
     
     <content type="html"><![CDATA[<h1 id="凸优化">凸优化</h1><h2 id="介绍">介绍</h2><p>机器学习中的大部分的情况都是优化一些函数的值。例如，给定一个函数<span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>，我们想要找到<span class="math inline">\(x \in \mathbb{R}\)</span>使得<span class="math inline">\(f(x)\)</span>的值最小 （或最大）。最小二乘法，logistics回归，支持向量机都是最优化问题。</p><p>在大部分案例中，想要找到一个函数的全局最优值是非常困难的。</p>]]></content>
     
@@ -348,11 +348,11 @@ f(x) = f(a) + \frac{f^{&amp;#39;}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x-a)^
   </entry>
   
   <entry>
-    <title>梯度下降</title>
+    <title>常用激活函数</title>
     <link href="https://mejhwu.github.io/2018/04/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%B8%B8%E7%94%A8%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/"/>
     <id>https://mejhwu.github.io/2018/04/24/机器学习/常用激活函数/</id>
     <published>2018-04-23T16:00:00.000Z</published>
-    <updated>2018-11-06T13:42:55.000Z</updated>
+    <updated>2018-11-13T14:11:50.274Z</updated>
     
     <content type="html"><![CDATA[<p>常用激活函数</p><ol style="list-style-type: decimal"><li><p>sigmoid函数</p></li><li><p>relu</p></li></ol><div class="figure"><img src="/home/mejhwu/blogs/blog/source/_posts/机器学习/常用激活函数.assets/relu.png" alt="relu"><p class="caption">relu</p></div><ol start="3" style="list-style-type: decimal"><li>relu -variant</li></ol><div class="figure"><img src="/home/mejhwu/blogs/blog/source/_posts/机器学习/常用激活函数.assets/relu-variant.png"></div><ol start="4" style="list-style-type: decimal"><li>selu</li></ol><div class="figure"><img src="/home/mejhwu/blogs/blog/source/_posts/机器学习/常用激活函数.assets/selu.png"></div><p>在应用selu的时候需要注意初始化参数w的时候使用服从均值为0，方差为1的分布。</p><ol start="5" style="list-style-type: decimal"><li>swish</li></ol>]]></content>
     

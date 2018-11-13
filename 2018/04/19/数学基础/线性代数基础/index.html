@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="线性代数基础 基础理论和符号 线性代数提供了一种简单的表示和操作线性等式集（线性方程组）的方式。例如，考虑下面的方程组： \[ \begin{align} 4x_1 - 5x_2 &amp;amp; = -13 \\ -2x_1 + 3x_2 &amp;amp; = 9 \end{align} \] 上面的方程组中有两个公式和两个变量，正如中学代数中所学，\(x_1\)和\(x_2\)存在唯一解（除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数基础">
+<meta property="og:url" content="https://mejhwu.github.io/2018/04/19/数学基础/线性代数基础/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="线性代数基础 基础理论和符号 线性代数提供了一种简单的表示和操作线性等式集（线性方程组）的方式。例如，考虑下面的方程组： \[ \begin{align} 4x_1 - 5x_2 &amp;amp; = -13 \\ -2x_1 + 3x_2 &amp;amp; = 9 \end{align} \] 上面的方程组中有两个公式和两个变量，正如中学代数中所学，\(x_1\)和\(x_2\)存在唯一解（除">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-14T14:25:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性代数基础">
+<meta name="twitter:description" content="线性代数基础 基础理论和符号 线性代数提供了一种简单的表示和操作线性等式集（线性方程组）的方式。例如，考虑下面的方程组： \[ \begin{align} 4x_1 - 5x_2 &amp;amp; = -13 \\ -2x_1 + 3x_2 &amp;amp; = 9 \end{align} \] 上面的方程组中有两个公式和两个变量，正如中学代数中所学，\(x_1\)和\(x_2\)存在唯一解（除">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://mejhwu.github.io/2018/04/19/数学基础/线性代数基础/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>线性代数基础 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Kategorien</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mejhwu.github.io/2018/04/19/数学基础/线性代数基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jhwu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">线性代数基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-04-19 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-19T00:00:00+08:00">2018-04-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-10-14 22:25:36" itemprop="dateModified" datetime="2018-10-14T22:25:36+08:00">2018-10-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="线性代数基础">线性代数基础</h1>
+<h2 id="基础理论和符号">基础理论和符号</h2>
+<p>线性代数提供了一种简单的表示和操作线性等式集（线性方程组）的方式。例如，考虑下面的方程组： <span class="math display">\[
+\begin{align}
+4x_1 - 5x_2 &amp; = -13 \\
+-2x_1 + 3x_2 &amp; = 9
+\end{align}
+\]</span> 上面的方程组中有两个公式和两个变量，正如中学代数中所学，<span class="math inline">\(x_1\)</span>和<span class="math inline">\(x_2\)</span>存在唯一解（除非方程组在一定程度上是退化的，比如第二个等式是第一个等式的简单乘积，但是上面的方程组中存在唯一解）。运用矩阵符号，我们能够更简单的表示上面的方程组： <span class="math display">\[
+\begin{align}
+Ax  = b &amp; \\
+with \ \  A =  \left [  \begin{matrix}4  &amp;  -5 \\ -2 &amp; 3 \end{matrix} \right]  &amp;, \ \  b = \left[ \begin{matrix} 13 \\ 9 \end{matrix} \right]
+\end{align}
+\]</span> 正如我们下面马上就要看见的，用这种形式来分析线性等式有很多优点（包含明显的节约空间）。</p>
+<h3 id="基础符号">基础符号</h3>
+<p>我们要使用下面的这些符号：</p>
+<ul>
+<li><p><span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>表示一个<span class="math inline">\(m\)</span>行<span class="math inline">\(n\)</span>列的矩阵，矩阵<span class="math inline">\(A\)</span>的元素是实数。</p></li>
+<li><p><span class="math inline">\(x \in \mathbb{R}^n\)</span>表示有<span class="math inline">\(n\)</span>个元素的向量。通常向量<span class="math inline">\(x\)</span>表示一个列向量（一个有<span class="math inline">\(n\)</span>行1列的矩阵）。如果我们要明确的表示行向量（1行<span class="math inline">\(n\)</span>列的矩阵），我们通常用<span class="math inline">\(x^T\)</span>表示（<span class="math inline">\(x^T\)</span>表示<span class="math inline">\(x\)</span>的转置）。</p></li>
+<li><p>向量<span class="math inline">\(x\)</span>的第<span class="math inline">\(i\)</span>个元素表示为<span class="math inline">\(x_1\)</span>： <span class="math display">\[
+  x = \left[ \begin{matrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{matrix} \right]
+  \]</span></p></li>
+<li><p>用符号<span class="math inline">\(a_{ij}\)</span>（或者<span class="math inline">\(A_{ij}, A_{i,j}\)</span>）表示矩阵<span class="math inline">\(A\)</span>的第<span class="math inline">\(i\)</span>行第<span class="math inline">\(j\)</span>列元素： <span class="math display">\[
+  A = \left[ \begin{matrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+  \end{matrix} \right]
+  \]</span></p></li>
+<li><p>用<span class="math inline">\(a_j\)</span>或<span class="math inline">\(A_j\)</span>表示<span class="math inline">\(A\)</span>的第<span class="math inline">\(j\)</span>列： <span class="math display">\[
+  A = \left[ \begin{matrix}
+\mid &amp; \mid &amp; &amp; \mid \\
+a_1 &amp; a_ 2 &amp; \cdots &amp; a_n \\
+\mid &amp; \mid &amp; &amp; \mid \\
+\end{matrix} \right]
+  \]</span></p></li>
+<li><p>用<span class="math inline">\(a_i^T\)</span>或<span class="math inline">\(A_i^T\)</span>表示<span class="math inline">\(A\)</span>的第<span class="math inline">\(i\)</span>行： <span class="math display">\[
+  A = \left[ \begin{matrix}
+- &amp; a_1^T  &amp; - \\
+- &amp; a_2^T &amp; - \\
+  &amp;   \vdots &amp; \\
+- &amp; a_n^T &amp; -   
+\end{matrix} \right]
+  \]</span></p></li>
+</ul>
+<p>注意以上的这些定义可能会引起歧义（比如，在前面的两个定义中<span class="math inline">\(a_1\)</span>和<span class="math inline">\(a_1^T\)</span>不是相同的向量）。通常这些符号的意思可以很明显的从它们的使用中看出来。</p>
+<h2 id="矩阵乘法">矩阵乘法</h2>
+<p>两个矩阵<span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> 和<span class="math inline">\(B \in \mathbb{R}^{n \times p}\)</span>的积是矩阵： <span class="math display">\[
+C = AB = \mathbb{R}^{m \times p}
+\]</span> 其中 <span class="math display">\[
+C_{ij} = \sum_{k=1}^n A_{ik}B_{kj}
+\]</span> 注意，为了是矩阵的乘积存在，<span class="math inline">\(A\)</span>的列数必须等于<span class="math inline">\(B\)</span>的行数。有很多种方法去看待矩阵乘法，我们会解释几种特殊的情况。</p>
+<h3 id="向量-向量乘积">向量-向量乘积</h3>
+<p>给定两个向量<span class="math inline">\(x, y \in \mathbb{R}^n\)</span>，<span class="math inline">\(x^Ty\)</span>（有时称为向量的<strong><em>內积</em></strong>或<strong><em>点积</em></strong>）的结果是一个实数： <span class="math display">\[
+x^Ty \in \mathbb{R} = \sum_{i=1}^nx_iy_i
+\]</span> 总是有<span class="math inline">\(x^Ty=y^Tx\)</span>。</p>
+<p>给定两个向量<span class="math inline">\(x \in \mathbb{R}^m, y \in \mathbb{R}^n\)</span>（两个向量的长度不等），<span class="math inline">\(xy^T\)</span>称为向量的外积。其结果是一个矩阵，并且结果矩阵的元素为<span class="math inline">\((xy^T)_{ij}=x_iy_j\)</span>。 <span class="math display">\[
+xy^T \in \mathbb{R}_{m \times n} = \left[ \begin{matrix}
+                            x_1y_1 &amp; x_1y_2 &amp; \cdots &amp; x_1y_n \\
+                            x_2y_1 &amp; x_2y_2 &amp; \cdot &amp; x_2y_n \\
+                            \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+                            x_my_1 &amp; x_my_2 &amp; \cdots &amp; x_my_n
+                            \end{matrix} \right]
+\]</span></p>
+<h3 id="矩阵-向量乘积">矩阵-向量乘积</h3>
+<p>给定一个矩阵<span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>和向量<span class="math inline">\(x \in \mathbb{R}^n\)</span>，它们的乘积是一个向量<span class="math inline">\(y=Ax \in \mathbb{R}^m\)</span>，有两种方式来看待矩阵向量乘法：</p>
+<p>如果<span class="math inline">\(A\)</span>写作行向量形式，我们能将<span class="math inline">\(Ax\)</span>表达为： <span class="math display">\[
+y = \left[ \begin{matrix} 
+    - &amp; a_1^T &amp; - \\
+    - &amp; a_2^T &amp; - \\
+     &amp; \vdots &amp; \\
+     - &amp; a_m^T &amp; - \\
+    \end{matrix} \right] x
+    = \left[ \begin{matrix} 
+    a_1^Tx \\
+    a_2^Tx \\
+     \vdots \\
+     a_m^Tx \\
+    \end{matrix} \right]
+\]</span> 换句话说，向量<span class="math inline">\(y\)</span>的第<span class="math inline">\(i\)</span>个元素等于矩阵<span class="math inline">\(A\)</span>的第<span class="math inline">\(i\)</span>行和向量<span class="math inline">\(x\)</span>的內积，<span class="math inline">\(y_i = a_i^Tx\)</span>。</p>
+<p>另外，将<span class="math inline">\(A\)</span>写作行向量形式，在这种情况下， <span class="math display">\[
+y = \left[ \begin{matrix} 
+    \mid &amp; \mid &amp; &amp; \mid \\
+    a_1 &amp; a_2 &amp; &amp; a_n \\
+    \mid &amp; \mid &amp; &amp; \mid 
+    \end{matrix} \right]
+    \left[ \begin{matrix} 
+    x_1 \\ x_2 \\ \vdots \\ x_n
+    \end{matrix} \right] = 
+    \left[ \begin{matrix} 
+    a_1
+    \end{matrix} \right] x_1 +  
+    \left[ \begin{matrix} 
+    a_2
+    \end{matrix} \right] x_2 +  \cdots + 
+    \left[ \begin{matrix} 
+    a_n
+    \end{matrix} \right] x_n
+\]</span> 话句话说，<span class="math inline">\(y\)</span>是矩阵的列的线性组合，其系数是向量<span class="math inline">\(x\)</span>的元素。</p>
+<p>到目前为止，我们已经讨论过在矩阵右边乘上一个列向量，同样，也可以在矩阵左边乘上一个行向量。写作$y<sup>T=x</sup>TA,  其中 A ^{m n},  x ^m,  y ^n <span class="math inline">\(。类似于前面所讨论的，我们也可以用两张方式来表达\)</span>y^T<span class="math inline">\(，取决于我们将矩阵\)</span>A<span class="math inline">\(写作行向量形式还是列向量形式。首先将\)</span>A$写作列向量形式： <span class="math display">\[
+y^T=x^T
+    \left[ \begin{matrix} 
+    \mid &amp; \mid &amp; &amp; \mid \\
+    a_1 &amp; a_2 &amp; &amp; a_n \\
+    \mid &amp; \mid &amp; &amp; \mid 
+    \end{matrix} \right] =
+    \left[ \begin{matrix} 
+    x^Ta_1 &amp; x^Ta_2 &amp; \cdots &amp; x^Ta_n
+    \end{matrix} \right]
+\]</span> 上面的公式表明了向量<span class="math inline">\(y^T\)</span>的第<span class="math inline">\(i\)</span>的元素等于向量<span class="math inline">\(x\)</span>和矩阵第<span class="math inline">\(i\)</span>列的内积。</p>
+<p>最后，通过将<span class="math inline">\(A\)</span>写作行向量形式，我们得到了向量-矩阵乘积的最后一种表达方式。 <span class="math display">\[
+\begin{align}
+y^T &amp; =\left[ \begin{matrix} 
+    x_1 &amp; x_2 &amp; \cdots &amp; x_n
+    \end{matrix} \right]
+    \left[ \begin{matrix} 
+    - &amp; a_1^T &amp; - \\
+    - &amp; a_2^T &amp; - \\
+     &amp; \vdots &amp; \\
+     - &amp; a_n^T &amp; - \\
+    \end{matrix} \right]  \\ &amp;=
+    x_1\left[ \begin{matrix}  - &amp; a_1^T &amp; - \end{matrix} \right]  + 
+    x_1\left[ \begin{matrix}  - &amp; a_2^T &amp; - \end{matrix} \right]  + 
+    \cdots + 
+    x_1\left[ \begin{matrix}  - &amp; a_n^T &amp; - \end{matrix} \right]
+\end{align}
+\]</span> 可以看出<span class="math inline">\(y^T\)</span>是<span class="math inline">\(A\)</span>的行的线性组合，其系数是<span class="math inline">\(x\)</span>的元素。</p>
+<h3 id="矩阵-矩阵乘积">矩阵-矩阵乘积</h3>
+<p>有了以上的基础后，我们可以用4种不同的方式来看待本节开始所定义的矩阵-矩阵乘积<span class="math inline">\(C=AB\)</span>。首先，我们可以将矩阵-矩阵乘积看作是向量-向量乘积的一个集合。一个很容易从定义中就能看出的观点，矩阵<span class="math inline">\(C\)</span>的第<span class="math inline">\(i,j\)</span>个元素是矩阵<span class="math inline">\(A\)</span>的第<span class="math inline">\(i\)</span>行和矩阵<span class="math inline">\(B\)</span>的第<span class="math inline">\(j\)</span>列的内积。用符号表示如下： <span class="math display">\[
+C=AB=\left[ \begin{matrix} 
+    - &amp; a_1^T &amp; - \\
+    - &amp; a_2^T &amp; - \\
+     &amp; \vdots &amp; \\
+     - &amp; a_m^T &amp; - \\
+    \end{matrix} \right]
+    \left[ \begin{matrix} 
+    \mid &amp; \mid &amp; &amp; \mid \\
+    b_1 &amp; b_2 &amp; \cdots   &amp; b_p\\
+    \mid &amp; \mid &amp; &amp; \mid 
+    \end{matrix} \right] = 
+    \left[ \begin{matrix} 
+    a_1^Tb_1 &amp; a_1^Tb_2 &amp; \cdots &amp; a_1^Tb_p \\
+    a_2^Tb_1 &amp; a_2^Tb_2 &amp; \cdots &amp; a_2^Tb_p \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    a_m^Tb_1 &amp; a_m^Tb_2 &amp; \cdots &amp; a_m^Tb_p \\
+    \end{matrix} \right]
+\]</span> 因为<span class="math inline">\(A \in \mathbb{R}^{m \times n}, \ B \in \mathbb{R}^{n \times p}, a_i \in \mathbb{R}^n, b_j \in \mathbb{R}^n\)</span>，这些內积总是有意义的。用行向量表示<span class="math inline">\(A\)</span>，用列向量表示<span class="math inline">\(B\)</span>是最“自然“的表示。相应的，当我们用行向量表示<span class="math inline">\(A\)</span>，用列向量表示<span class="math inline">\(B\)</span>时，<span class="math inline">\(AB\)</span>可以解释为向量外积的和。用符号表示如下： <span class="math display">\[
+C=AB=\left[ \begin{matrix} 
+    \mid &amp; \mid &amp; &amp; \mid \\
+    a_1 &amp; a_2 &amp; \cdots &amp; a_n\\
+    \mid &amp; \mid &amp; &amp; \mid 
+    \end{matrix} \right]
+    \left[ \begin{matrix} 
+    - &amp; a_b^T &amp; - \\
+    - &amp; a_b^T &amp; - \\
+     &amp; \vdots &amp; \\
+     - &amp; a_n^T &amp; - \\
+    \end{matrix} \right]
+    =\sum_{i=1}^n a_ib_i^T
+\]</span> 用另一种方式来看，对于所有的<span class="math inline">\(i\)</span>，<span class="math inline">\(AB\)</span>等于<span class="math inline">\(A\)</span>的第<span class="math inline">\(i\)</span>行和<span class="math inline">\(B\)</span>的第<span class="math inline">\(i\)</span>列的外积的和。因此，在这种情况下，<span class="math inline">\(a_i \in \mathbb{R}^m, \ b_i \in \mathbb{R}^p\)</span>，外积<span class="math inline">\(a_ib_i^T\)</span>的维度是<span class="math inline">\(m \times p\)</span>，其与<span class="math inline">\(C\)</span>的维度一样。</p>
+<p>其次，我们也可以将矩阵-矩阵乘积看作是一个矩阵-向量乘积的集合。特别地，如果将<span class="math inline">\(B\)</span>用列向量表示，我们能够将<span class="math inline">\(C\)</span>的列看作是<span class="math inline">\(A\)</span>和<span class="math inline">\(B\)</span>的列之间的矩阵-向量乘积。用符号表示： <span class="math display">\[
+C=AB=A
+    \left[ \begin{matrix} 
+    \mid &amp; \mid &amp; &amp; \mid \\
+    b_1 &amp; b_2 &amp; \cdots  &amp; b_p\\
+    \mid &amp; \mid &amp; &amp; \mid 
+    \end{matrix} \right]  = 
+    \left[ \begin{matrix} 
+    \mid &amp; \mid &amp; &amp; \mid \\
+    Ab_1 &amp;A b_2 &amp; \cdots  &amp; Ab_p\\
+    \mid &amp; \mid &amp; &amp; \mid 
+    \end{matrix} \right]
+\]</span> 这里<span class="math inline">\(C\)</span>的第<span class="math inline">\(i\)</span>列是在右边乘上向量的矩阵-向量乘法，<span class="math inline">\(c_i = Ab_i\)</span>。这个矩阵-向量乘法能够依次用前面部分所讲的观点解释。最后，我们有类似的观点，用行向量表示<span class="math inline">\(A\)</span>，<span class="math inline">\(C\)</span>的行可以看作A的行和<span class="math inline">\(B\)</span>之间的矩阵-向量乘积。 <span class="math display">\[
+C=AB=\left[ \begin{matrix} 
+    - &amp; a_1^T &amp; - \\
+    - &amp; a_2^T &amp; - \\
+     &amp; \vdots &amp; \\
+     - &amp; a_m^T &amp; - \\
+    \end{matrix} \right] B =
+    \left[ \begin{matrix} 
+    - &amp; a_1^TB &amp; - \\
+    - &amp; a_2^TB &amp; - \\
+     &amp; \vdots &amp; \\
+     - &amp; a_m^TB &amp; - \\
+    \end{matrix} \right]
+\]</span> 这里，<span class="math inline">\(C\)</span>的第<span class="math inline">\(i\)</span>行给定为在左边乘上向量的矩阵-向量乘法，<span class="math inline">\(c_i^T=a_i^TB\)</span>。</p>
+<p>当这些所有的观点都可以很容易的从在第一部分中所个的最初的定义中推导出来，如此大程度的解剖矩阵乘法看起来有点用力过猛。但是，事实上所有的线性代数都是用一定的方式处理矩阵乘法，并且值得花一定的时间去对以上讨论的观点有一个直观的理解。</p>
+<p>另外，在更高层次上去了解一些矩阵乘法的基本属性是很有用的。</p>
+<ul>
+<li>矩阵乘法满足交换律：<span class="math inline">\((AB)C=A(BC)\)</span></li>
+<li>矩阵乘法满足分配律：<span class="math inline">\(A(B+C)=AB+AC\)</span></li>
+<li>一般而言，矩阵乘法是不能左右交换的：<span class="math inline">\(AB \neq BA\)</span></li>
+</ul>
+<h2 id="操作和属性">操作和属性</h2>
+<p>这部分我们将呈现几种矩阵和向量的操作与属性。希望这些大量的矩阵处理能帮助你回顾，因此这些笔记指数作为这些主题的参考（hopefully a great deal of this will be review for you, so the notes can just serve as a reference for these topics）。</p>
+<h3 id="单位矩阵和对角矩阵">单位矩阵和对角矩阵</h3>
+<p>单位矩阵表示为<span class="math inline">\(I \in \mathbb{R}^{n \times n}\)</span>，是一个对角线上为1其余全为0的方阵， <span class="math display">\[
+I_{ij} = \left \{ \begin{align} &amp; 1 &amp; i = j \\
+                             &amp;0 &amp; i \ne  j\end{align} \right.
+\]</span></p>
+<p>对于所有的<span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>， <span class="math display">\[
+AI=A=IA
+\]</span> 其中<span class="math inline">\(I\)</span>的大小由<span class="math inline">\(A\)</span>的维数决定，所以以上的乘法是可以成立的。</p>
+<p>对角阵是一个非对角元素都为0的矩阵，通常表示为<span class="math inline">\(D=diag(d_1, d_2, \cdots, d_n)\)</span>， <span class="math display">\[
+D_{ij}=\left\{ \begin{align} &amp; d_i &amp; i=j  \\ &amp; 0 &amp; i \ne j \end{align} \right.
+\]</span> 很明显，<span class="math inline">\(I=diag(1,1,\cdots, 1)\)</span>.</p>
+<h3 id="转置">转置</h3>
+<p>转置是指将矩阵的行列翻转。给定一个矩阵<span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>，其转置(写作<span class="math inline">\(A^T\)</span>)定义为 <span class="math display">\[
+A^T \in \mathbb{R}^{n \times m}, \ (A^T)_{ij} = A_{ji}
+\]</span> 实际上，我们已经在描述行向量中已经使用过转置了，因为列向量的转置就是行向量。</p>
+<p>转置具有以下属性：</p>
+<ul>
+<li><span class="math inline">\((A^T)^T=A\)</span></li>
+<li><span class="math inline">\((AB)^T= B^TA^T\)</span></li>
+<li><span class="math inline">\((A+B)^T=A^T+B^T\)</span></li>
+</ul>
+<h3 id="对称矩阵">对称矩阵</h3>
+<p>如果方阵<span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>，并且<span class="math inline">\(A=A^T\)</span>，则矩阵<span class="math inline">\(A\)</span>称为对称阵。如果<span class="math inline">\(A=-A^T\)</span>，那么<span class="math inline">\(A\)</span>就称为反对称的。对于所有的矩阵<span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>，矩阵<span class="math inline">\(A+A^T\)</span>是对称的，矩阵<span class="math inline">\(A-A^T\)</span>是反对称的。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/22/算法/二叉搜索树/" rel="next" title="二叉搜索树">
+                <i class="fa fa-chevron-left"></i> 二叉搜索树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/19/数学基础/概率论总结/" rel="prev" title="概率论总结">
+                概率论总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">jhwu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">Tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数基础"><span class="nav-number">1.</span> <span class="nav-text">线性代数基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础理论和符号"><span class="nav-number">1.1.</span> <span class="nav-text">基础理论和符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础符号"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础符号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵乘法"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量-向量乘积"><span class="nav-number">1.2.1.</span> <span class="nav-text">向量-向量乘积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵-向量乘积"><span class="nav-number">1.2.2.</span> <span class="nav-text">矩阵-向量乘积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵-矩阵乘积"><span class="nav-number">1.2.3.</span> <span class="nav-text">矩阵-矩阵乘积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作和属性"><span class="nav-number">1.3.</span> <span class="nav-text">操作和属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单位矩阵和对角矩阵"><span class="nav-number">1.3.1.</span> <span class="nav-text">单位矩阵和对角矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转置"><span class="nav-number">1.3.2.</span> <span class="nav-text">转置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称矩阵"><span class="nav-number">1.3.3.</span> <span class="nav-text">对称矩阵</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jhwu</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

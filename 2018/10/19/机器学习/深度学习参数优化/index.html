@@ -108,17 +108,37 @@
 
 
 
-  <meta name="description" content="深度学习参数优化 深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。 在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。  调整学习率  常用的学习率算法：（1）Adagrad，（1）RMSProp，（3）Momentum，（4）Adam(RMSProp + Momentum).  采用新的激活函数">
+  <meta name="description" content="深度学习参数优化 深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。 在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。 在测试集上效果不好有3种常用方法：（1）提前停止，（2）正则化，（3）Dropout 训练优化 调整学习率 如果采用固定学习率，会出现Vanishing Gradient的问题，在靠近">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习参数优化">
 <meta property="og:url" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="深度学习参数优化 深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。 在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。  调整学习率  常用的学习率算法：（1）Adagrad，（1）RMSProp，（3）Momentum，（4）Adam(RMSProp + Momentum).  采用新的激活函数">
+<meta property="og:description" content="深度学习参数优化 深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。 在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。 在测试集上效果不好有3种常用方法：（1）提前停止，（2）正则化，（3）Dropout 训练优化 调整学习率 如果采用固定学习率，会出现Vanishing Gradient的问题，在靠近">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-19T14:42:12.000Z">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/vanishing_gradient.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/adagrad.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/rmsprop.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/hard_to_fin_optimal_params.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/momentum1.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/momentum2.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/adam.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/reLu.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/relu_variant.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/maxout.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/maxout_relu.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/maxout_more1.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/maxout_more2.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/regularization.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/regularization_l2.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/regularization_l1.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/dropout.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/dropout1.png">
+<meta property="og:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/dropout2.png">
+<meta property="og:updated_time" content="2018-11-14T03:29:22.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习参数优化">
-<meta name="twitter:description" content="深度学习参数优化 深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。 在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。  调整学习率  常用的学习率算法：（1）Adagrad，（1）RMSProp，（3）Momentum，（4）Adam(RMSProp + Momentum).  采用新的激活函数">
+<meta name="twitter:description" content="深度学习参数优化 深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。 在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。 在测试集上效果不好有3种常用方法：（1）提前停止，（2）正则化，（3）Dropout 训练优化 调整学习率 如果采用固定学习率，会出现Vanishing Gradient的问题，在靠近">
+<meta name="twitter:image" content="https://mejhwu.github.io/2018/10/19/机器学习/深度学习参数优化/images/深度学习参数优化/vanishing_gradient.png">
 
 
 
@@ -332,12 +352,24 @@
                 
               
 
-              <time title="Post created: 2018-10-19 00:00:00 / Updated at: 22:42:12" itemprop="dateCreated datePublished" datetime="2018-10-19T00:00:00+08:00">2018-10-19</time>
+              <time title="Post created: 2018-10-19 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-19T00:00:00+08:00">2018-10-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-11-14 11:29:22" itemprop="dateModified" datetime="2018-11-14T11:29:22+08:00">2018-11-14</time>
               
             
           </span>
@@ -391,15 +423,113 @@
         <h1 id="深度学习参数优化">深度学习参数优化</h1>
 <p>深度学习效果不好的话需要判断是在训练集上效果不好还是在测试集上效果不好，这两种情况有不同的优化方法。</p>
 <p>在训练集上效果不好有两种常用的优化方法：1. 调整学习率；2. 采用新的激活函数。</p>
-<ol style="list-style-type: decimal">
-<li>调整学习率</li>
-</ol>
-<p>常用的学习率算法：（1）Adagrad，（1）RMSProp，（3）Momentum，（4）Adam(RMSProp + Momentum).</p>
-<ol start="2" style="list-style-type: decimal">
-<li>采用新的激活函数</li>
-</ol>
-<p>常用激活函数：（1）ReLU，（2）maxout.</p>
 <p>在测试集上效果不好有3种常用方法：（1）提前停止，（2）正则化，（3）Dropout</p>
+<h2 id="训练优化">训练优化</h2>
+<h3 id="调整学习率">调整学习率</h3>
+<p>如果采用固定学习率，会出现Vanishing Gradient的问题，在靠近输出层的参数已经有很大的改变，但是在靠近输入层的参数改变还很小。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/vanishing_gradient.png" alt="vanishing_gradient">
+<p class="caption">vanishing_gradient</p>
+</div>
+<h4 id="adagrad">Adagrad</h4>
+<p>adagrad是利用前一次的梯度和学习率来估算下一次的学习率。其公式为 <span class="math display">\[
+w^{t+1} \gets w^t - \frac{\eta}{\sqrt{\sum_{i=0}^t(g^i)^2}}g^t
+\]</span></p>
+<div class="figure">
+<img src="images/深度学习参数优化/adagrad.png">
+
+</div>
+<h4 id="rmsprop">RMSProp</h4>
+<p>在训练神经网络的时候，其梯度结构会非常复杂。RMSProp公式如下： <span class="math display">\[
+w^{t+1} \gets w^t - \frac{\eta}{ \sqrt{\alpha (\sigma^{t-1})^2 + (1-\alpha)(g^t)^2}}g^t
+\]</span> <img src="images/深度学习参数优化/rmsprop.png"></p>
+<h4 id="momentum">Momentum</h4>
+<p>在进行梯度下降的时候，很难找到最优解，因为在计算梯度的时候会存在梯度近似为0的点、鞍点和局部最小的点。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/hard_to_fin_optimal_params.png">
+
+</div>
+<p>梯度的下降过程，可以类比为物理世界中的坡度的下降，在物理世界的坡度下降时会有动能的作用，导致下降的时候可以跳过鞍点甚至局部最小点。momentum方法就是在计算梯度的过程中，引入前一次计算的梯度的“动能”。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/momentum1.png">
+
+</div>
+<div class="figure">
+<img src="images/深度学习参数优化/momentum2.png">
+
+</div>
+<h4 id="adamrmsprop-momentum">Adam(RMSProp + Momentum)</h4>
+<p>adam就是采用rmsprop和momentum相结合的方法。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/adam.png">
+
+</div>
+<h3 id="采用新的激活函数">采用新的激活函数</h3>
+<h4 id="relu">ReLU</h4>
+<p>relu的全称是Rectified Linear Unit，其公式为： <span class="math display">\[
+\sigma(z) = max(0, z)
+\]</span> <img src="images/深度学习参数优化/reLu.png"></p>
+<p>relu还拥有不同变体，比如Leaky ReLU和Parametric ReLU。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/relu_variant.png">
+
+</div>
+<h4 id="maxout">maxout</h4>
+<p>maxout就是将同一层中的节点进行分组，然后将分组中的最大的一个节点输出进入下一层网络。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/maxout.png">
+
+</div>
+<p>ReLu可看作是Maxout中的一种特殊的格式，即增加了一个参数为0的输出，然后将正常输出与参数为0的输出做maxout。!</p>
+<div class="figure">
+<img src="images/深度学习参数优化/maxout_relu.png">
+
+</div>
+<p>利用Maxout可以得到任意类似于折线图的激活函数。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/maxout_more1.png">
+
+</div>
+<div class="figure">
+<img src="images/深度学习参数优化/maxout_more2.png">
+
+</div>
+<p>在利用Maxout进行训练的时候，每次训练的时候只会训练完整网络的一个子集。因为训练数据很多，所以所有的参数都是可以被训练到的。</p>
+<h2 id="测试优化">测试优化</h2>
+<p>当在训练集上表现很好，但是在测试集上效果不好的最主要的原因就是过拟合。防止过拟合主要又一下几种方法。</p>
+<h3 id="提前停止">提前停止</h3>
+<p>顾名思义，提前停止，就是在训练的时候可以不用将神经网络训练到最好，达到一个在训练集和测试集上都表现不错的结果就可以了。</p>
+<h3 id="正则化">正则化</h3>
+<p>正则化是在损失函数中添加正则项，正则的主要作用是添加最参数的限制。常用的正则项又L2正则和L1正则。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/regularization.png">
+
+</div>
+<p>L2正则就是在损失函数中加入参数的L2范数：<span class="math inline">\(||\theta||_2=(w_1)^2+(w_2)^2+\cdots\)</span></p>
+<div class="figure">
+<img src="images/深度学习参数优化/regularization_l2.png">
+
+</div>
+<p>L2正则就是在损失函数中加入参数的L2范数：<span class="math inline">\(||\theta||_1=|w_1|+|w_2|+\cdots\)</span></p>
+<div class="figure">
+<img src="images/深度学习参数优化/regularization_l1.png">
+
+</div>
+<h3 id="dropout">Dropout</h3>
+<p>Dropout是在训练时常用的一种技术，Dropout指在训练中以一定的概率去掉每一层的一些节点。这样可以加快训练速度，并且可以防止过拟合。</p>
+<div class="figure">
+<img src="images/深度学习参数优化/dropout.png">
+
+</div>
+<div class="figure">
+<img src="images/深度学习参数优化/dropout1.png">
+
+</div>
+<div class="figure">
+<img src="images/深度学习参数优化/dropout2.png">
+
+</div>
+<p>参考：<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17.html" target="_blank" rel="noopener">李宏毅-机器学习2017</a></p>
 
       
     </div>
@@ -427,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/19/机器学习/深度学习调参建议/" rel="next" title="深度学习参数优化">
-                <i class="fa fa-chevron-left"></i> 深度学习参数优化
+              <a href="/2018/10/19/机器学习/深度学习调参建议/" rel="next" title="深度学习调参建议">
+                <i class="fa fa-chevron-left"></i> 深度学习调参建议
               </a>
             
           </div>
@@ -596,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习参数优化"><span class="nav-number">1.</span> <span class="nav-text">深度学习参数优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习参数优化"><span class="nav-number">1.</span> <span class="nav-text">深度学习参数优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练优化"><span class="nav-number">1.1.</span> <span class="nav-text">训练优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调整学习率"><span class="nav-number">1.1.1.</span> <span class="nav-text">调整学习率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#adagrad"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rmsprop"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#momentum"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">Momentum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#adamrmsprop-momentum"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">Adam(RMSProp + Momentum)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采用新的激活函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">采用新的激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#relu"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maxout"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">maxout</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试优化"><span class="nav-number">1.2.</span> <span class="nav-text">测试优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提前停止"><span class="nav-number">1.2.1.</span> <span class="nav-text">提前停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化"><span class="nav-number">1.2.2.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dropout"><span class="nav-number">1.2.3.</span> <span class="nav-text">Dropout</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
